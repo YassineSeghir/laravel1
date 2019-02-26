@@ -14,3 +14,33 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//--Products
+Route::get('/products', function () {
+    return view('products');
+});
+//-- Add Products
+Route::get('/add-product', function () {
+    return view('add-product');
+});
+// POST-- Confirm save products
+Route::get('/confirm-save-product', function () {
+    return view('confirm-save-product');
+});
+// -- View Products
+Route::get('/view-product', function () {
+    return view('view-product');
+});
+
+//-- edit-product
+Route::get('/edit-product', function () {
+    return view('edit-product');
+});
+
+//-- confirm-edit-product
+Route::get('/confir-edit-product', function () {
+    return view('confirm-edit-product');
+});
+//-- confirm-delete-product
+Route::get('/confir-delete-product', function () {
+    return view('confir-delete-product');
+});
