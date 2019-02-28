@@ -1,15 +1,12 @@
 <?php
-include_once("array.php"); 
+@include('includes.array')
 
 //----------------------------------------------------------------------
 // AFFICHE ARTICLES 
 //---------------------------------------------------------------------- 
 function afficheArticleFull(){
-    $nb = ConnectBDD()->query('SELECT * FROM article 
-    INNER JOIN asso_article_img ON article.ID_ARTICLE = asso_article_img.ID_ARTICLE
-    INNER JOIN images ON images.ID_IMAGE = asso_article_img.ID_IMAGE
-    ORDER BY NAME ASC
-    ');	
+
+
     while ($article = $nb->fetch()){
         echo "<div class=\"article\">";
             echo "<div class=\"four left\"><h4>".$article['NAME']."</h4>  

@@ -64,14 +64,14 @@ width: 40%;
 }
 /*-------------------------------------*/
 .fond {
-	background:url("images/fond.jpg");  
+	background:url("../images/fond.jpg");
 	background-position: center;
 	background-color: #FF530D;
 	min-height :65vh;
 	padding-top:150px;
 }
 .fondPanier {
- //background:url("images/Mens-Health.jpg");  
+ //background:url("../images/Mens-Health.jpg");
 	background-position: center;
 	background-color: #23bcc5; 
 	padding-top:50px;
@@ -267,7 +267,7 @@ a:hover {
 	color:#FFF!important;
 }
 .check {
-		background:url("images/check.png") repeat;
+		/*background:url("../images/check.png") repeat;*/
 }
 
 .grey {
@@ -291,7 +291,7 @@ a:hover {
 	padding-bottom:30px;
 }
 .bck {
-	background:url("images/checksmall.png") repeat;
+	/*background:url("images/checksmall.png") repeat;*/
 	border-top: solid 1px #000;
 }
 .lo {
@@ -358,7 +358,7 @@ a:hover {
 }
 .delete{
 	width:auto!important;
-	border-radius: none!important;
+	/*border-radius: none!important;*/
 	border:none!important; 
 	padding-top:30px;
 	box-shadow:none!important;
@@ -371,7 +371,7 @@ a:hover {
 	top: -100px;
 	right: 15%;
 	/*background-color:#ff3300;*/
-	background-color: rgb(255,51,0,0.9); 
+	background-color: rgb(255,51,0);
 	width:10%;
 	overflow:hidden; 
 	border:solid 5px #FF3300;
@@ -383,7 +383,7 @@ a:hover {
 
 .pictureRed:hover .imgRed {
 	display:block;
-	width:100%
+	width:100%;
 	height:auto;
 	opacity:1;
 	-webkit-transition: opacity 1s ease-in-out;
@@ -492,7 +492,7 @@ ul {
 }
 .alert {
 	color: #D10B0E;
-	font-size: bold;
+	/*font-size: bold;*/
 }
   .contact select {
   	padding: 8px;

@@ -15,9 +15,19 @@ class CreatePagesController extends Controller {
         return view('general_pages.mentions');
     }
 
-public function showContact(){
+    public function showContact(){
 
         return view('general_pages.contact');
     }
+
+    public function showHome(){
+
+        return view('homepage');
+    }
+    public function showTemplate(){
+
+        return view('template');
+    }
 }
+
 
