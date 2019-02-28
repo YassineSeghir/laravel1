@@ -1,4 +1,4 @@
-@extends('simple-page')
+@extends('layout')
 @section('title', 'Home')
 @section('content')
     <div class="bande fond">
