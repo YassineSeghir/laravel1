@@ -1,10 +1,12 @@
 <div class="links">
-    <ul class="nav justify-content-end">
-        <li class="nav-item"><a href="{{url('/')}}">Ajouter produit</a></li>
-        <li><a href="{{url('/')}}">Produits</a></li>
-        <li><a href="{{url('/')}}">Contact</a></li>
-        <li><a href="{{url('/')}}">Société</a></li>
-    </ul>
+    <nav>
+        <ul>
+            <li><a href="#" target="parent">Accueil</a></li>
+            <li><a href="catalogue_2.php" target="parent">Catalogue</a></li>
+            <li><a href="#" target="parent">L'entreprise</a></li>
+            <li><a href="#" target="parent">Contact</a></li>
+        </ul>
+    </nav>
 
 </div>
 

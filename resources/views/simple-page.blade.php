@@ -7,9 +7,12 @@
         <title>@yield('title')</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Pacifico" rel="stylesheet">
         <!--styles-->
         <link href="{{ asset ('css/style.css')}}" rel="stylesheet">
+        <!--Font awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
 
 
     </head>
@@ -29,9 +32,9 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="bande">
                 @include('includes.navbar')
-                <div class="title m-b-md">
+                <div class="m-b-md">
                      @yield ('content')
                 </div>
             </div>

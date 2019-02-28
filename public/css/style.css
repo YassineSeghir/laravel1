@@ -18,6 +18,7 @@ body {
 	width: 100%;
 	text-align: left;
 	margin:0;
+
 }
 /*-----------------Main elements -----------------*/
 .bande {
@@ -71,7 +72,7 @@ width: 40%;
 	padding-top:150px;
 }
 .fondPanier {
- //background:url("../images/Mens-Health.jpg");
+ background:url("../images/Mens-Health.jpg");
 	background-position: center;
 	background-color: #23bcc5; 
 	padding-top:50px;
@@ -114,6 +115,7 @@ h1 {
 	font-weight: normal; 
 	line-height:1;
 	text-align:center;
+	color:#000;
 }
 h1 span { 
 	color:#FFF;
@@ -195,7 +197,7 @@ nav {
     float: right;
 	width: 50%;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size:0.7em;
+	font-size:0.9em;
 
 }
 nav ul {
@@ -206,26 +208,20 @@ nav ul li {
     float: left;
     width: auto;
     padding: 8px 12px;
-    background-color: #fff;
     margin-right: 15px;
-	border-radius: 5px;
-	transition: background-color 1s;
 }
 
+nav ul li a {
+	color:#000!important;
+	font-weight:bold;
+}
+nav ul li a:hover {
+	color:#FF530D!important;
+	font-weight:bold;
+}
 
-nav ul li:hover{
-	background-color: #15314d;
-	color:#FFF;
-	box-shadow: inset 5px 2px 10px 3px rgba(33, 119, 141, 0.2);
-}
-nav ul li a{
-	color:#000;
-}
-nav ul li:hover a:hover {
-	color:#FFF;
-}
 a {
-	color:#FFF; 
+	color:#FFF;
 	text-decoration: #112131;
 	text-decoration-style: wavy;
 }
