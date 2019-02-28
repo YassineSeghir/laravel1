@@ -1,7 +1,6 @@
 @extends('simple-page')
 @section('title', 'Nom entreprise Conditions Générales de Ventes')
 @section('content')
-    <section class="bande">
         <div class="container">
             <h1 class="pages">Conditions générales de vente</h1>
            <p>L'information précontractuelle est organisée par l'article L. 442-6 I 9° du Code de commerce qui fait obligation à tout producteur,
@@ -16,7 +15,4 @@
                 ou un demandeur de prestation de services des conditions particulières de vente qui ne sont pas soumises à cette obligation de communication.</p>
 
         </div>
-    </section>
-    <section>
-         </section>
 @endsection

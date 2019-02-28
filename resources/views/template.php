@@ -60,9 +60,9 @@ function afficheArticleFull(){
 				<div class="article">  
 		    		<input type="submit" name="go" id="go" value="J'achète" />  
 				</div>
-				</form> 
-				 
+				</form>
 			</div>
 		</section>
+
 	</body>
 <html>

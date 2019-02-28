@@ -31,13 +31,17 @@
                     @endauth
                 </div>
             @endif
-
+        </div>
             <div class="bande">
                 @include('includes.navbar')
-                <div class="m-b-md">
-                     @yield ('content')
-                </div>
+
             </div>
+        <div class="bande">
+            @yield ('content')
         </div>
+        <br><br>
+        <div class="bande">
+             @include('includes.footer')
+       <div class="bande">
     </body>
 </html>
