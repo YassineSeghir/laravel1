@@ -1,4 +1,4 @@
-@extends('simple-page')
+@extends('layout')
 @section('title', 'Nom entreprise contactez-nous !')
 @section('content')
     <section class="bande">

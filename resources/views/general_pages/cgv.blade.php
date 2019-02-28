@@ -1,4 +1,4 @@
-@extends('simple-page')
+@extends('layout')
 @section('title', 'Nom entreprise Conditions Générales de Ventes')
 @section('content')
         <div class="container">

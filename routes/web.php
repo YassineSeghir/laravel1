@@ -8,4 +8,4 @@ Route::get('/pages/contact', 'Pages\CreatePagesController@showContact');
 
 Route::get('/homepage', 'Pages\CreatePagesController@showHome');
 
-Route::get('/Catalogue', 'Pages\CreatePagesController@showCatalogue');
+Route::get('/catalogue', 'Pages\CreatePagesController@showCatalogue');
