@@ -24,7 +24,7 @@
                         <div class="left twenty">Prix</div>
                         <div class="right twenty">Supprimer</div>
                     </div>  
-                <form method="post" action="panier.php" enctype="multipart/form-data">
+                <form method="post" action="panier.blade.php" enctype="multipart/form-data">
                 
 				</form> 
             </div>
