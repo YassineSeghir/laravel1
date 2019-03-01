@@ -11,7 +11,7 @@ class CatalogController extends Controller
     {
         $articleBasket = [
             [
-                'id' => 'figue',
+                'id' => '0',
                 'title' => 'Confiture de figues',
                 'description' => 'Délicieuses figues fermentées, cuites dans du vin durant 48 heures. A tester absolument.',
                 'image' => "../images/conf_figues.jpg",
