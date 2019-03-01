@@ -46,8 +46,8 @@ class BasketController extends Controller
 
 
         // affiche view panier créé la variable toto qui a le contenu de $test
-      return view('panier',['panier' => $test]);
-        return view('panier',['panier' => $total]);
+     // return view('panier',['panier' => $test]);
+    //    return view('panier',['panier' => $total]);
     }
 }
 
