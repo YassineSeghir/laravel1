@@ -6,7 +6,7 @@ Route::get('/pages/contact', 'PagesController@showContact');
 Route::get('/homepage', 'PagesController@showHome');
 
 Route::get('/catalogue', 'CatalogController@showCatalog');
-Route::get('/Page_Admin', 'SuperadminController@showAdmin');
+Route::get('/login', 'SuperadminController@showAdmin');
 
 Route::get('/product', 'ProductController@index');
 Route::get('/product/create', 'ProductController@create');
