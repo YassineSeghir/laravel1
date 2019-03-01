@@ -1,13 +1,12 @@
 @charset "utf-8";
-/* CSS Document */
- /*--1 : Main elements-------------------*/
 
 body {
-	line-height: 1.1;
+	line-height: 1.5;
 	height: 100%;
 	width: 100%;
 	text-align: left;
 	margin:0;
+	background-color:#FFF!important;
 
 }
 /*-------------------------------------*/
@@ -17,15 +16,13 @@ body {
 	background-color: #FF530D;
 	min-height :65vh;
 	padding-top:150px;
+	margin-bottom:50px;
 }
 
 h1,h2,h3,h4,h5 {
 	font-family: 'Pacifico', cursive;
 }
 h1 {
-	font-size:6em;
-	font-weight: normal; 
-	line-height:1;
 	text-align:center;
 	color:#000;
 }
@@ -88,27 +85,80 @@ h4 {
 
 }
 h5 {
-	font-size:1.3em;
+	font-size:1.5em;
 	font-weight: normal;  
 	text-align:center;
+	padding-bottom: 25px
 }
  h5:after {
 	content: "";
     display: block;
     height: 3px;
-    background-color: #333333;
+    background-color: #52697F;
     width: 250px;
-    margin-bottom: 15px;
     margin: 0 auto;
-} 
-.icon{
+}
+ h5 span {
+
+	 color:#0082FF;
+ }
+.icon {
     text-align: center;
 }
+.center {
+	text-align:center;
+}
+.right{
+	text-align:right;
+}
+#suppr{
+	display:block!important;
+	margin:0 auto!important;
+	color:#red;
+}
+.imgbasket {
+	height: 110px;
+	min-width: 90px;
+	border-radius: 5px;
+	border: solid 1px #000;
+}
 
- 
+/*--------------------*/
+/*		MODIFICATION BOOTSTRAP 			*/
+.card {
+	background-color: #182f44;
+}
+.card-body {
+	border: solid 1px #000;
+}
+.bg-light {
+	background-color:#FF530D!important;
+}
+a {
+	color:#FFF!important;
+}
+nav {
+	height:80px;
+	margin-bottom:20px;
+}
+.nav-link {
+	font-weight:600;
+}
+.nav-link > a {
+	color:#000!important;
+}
+.btm {
+	margin-bottom:100px;
+}
+
+hr {
+	border : solid 1px #FFF;
+}
+
 /*------------------------------FOOTER---------------------------*/
 footer {
-		background-color:#112131;
+
+	background-color:#112131;
 		padding:30px;
 		overflow:hidden;
 		color:#FFF;

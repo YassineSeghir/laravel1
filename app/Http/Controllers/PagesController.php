@@ -27,7 +27,6 @@ class PagesController extends Controller
 
     public function showHome()
     {
-
         return view('homepage');
     }
 
@@ -59,5 +58,3 @@ class PagesController extends Controller
         return view('Catalogue', ['articlePanier' => $articlePanier]);
     }
 }
-
-

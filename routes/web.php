@@ -9,3 +9,6 @@ Route::get('/pages/contact', 'PagesController@showContact');
 Route::get('/homepage', 'PagesController@showHome');
 
 Route::get('/catalogue', 'PagesController@showCatalogue');
+
+Route::get('/panier', 'BasketController@showPanier');
+
