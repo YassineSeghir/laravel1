@@ -1,11 +1,11 @@
 <?php
 
-Route::get('/pages/cgv', 'Pages\CreatePagesController@showCGV');
+Route::get('/pages/cgv', 'PagesController@showCGV');
 
-Route::get('/pages/mentions', 'Pages\CreatePagesController@showMentions');
+Route::get('/pages/mentions', 'PagesController@showMentions');
 
-Route::get('/pages/contact', 'Pages\CreatePagesController@showContact');
+Route::get('/pages/contact', 'PagesController@showContact');
 
-Route::get('/homepage', 'Pages\CreatePagesController@showHome');
+Route::get('/homepage', 'PagesController@showHome');
 
-Route::get('/catalogue', 'Pages\CreatePagesController@showCatalogue');
+Route::get('/catalogue', 'PagesController@showCatalogue');

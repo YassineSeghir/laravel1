@@ -1,30 +1,38 @@
 <?php
 
-namespace App\Http\Controllers\Pages;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-class CreatePagesController extends Controller {
+class PagesController extends Controller
+{
 
-    public function showCGV(){
+    public function showCGV()
+    {
 
         return view('general_pages.cgv');
     }
-    public function showMentions(){
+
+    public function showMentions()
+    {
 
         return view('general_pages.mentions');
     }
 
-    public function showContact(){
+    public function showContact()
+    {
 
         return view('general_pages.contact');
     }
 
-    public function showHome(){
+    public function showHome()
+    {
 
         return view('homepage');
     }
-    public function showCatalogue(){
+
+    public function showCatalogue()
+    {
         $articlePanier = [
             [
                 'title' => 'Confiture de figues',
@@ -48,7 +56,7 @@ class CreatePagesController extends Controller {
             ]
 
         ];
-        return view('Catalogue', ['articlePanier'=>$articlePanier]);
+        return view('Catalogue', ['articlePanier' => $articlePanier]);
     }
 }
 

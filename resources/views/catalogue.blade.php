@@ -1,13 +1,13 @@
 @extends('simple-page')
 @section('title', 'Catalogue')
 @section('content')
-	<h1>Catalogue</h1>
 
-	@foreach($articlePanier as $Produit)
-	{{$Produit['title']}}</br>
-	{{$Produit['description']}}</br>
-	<img src="{{$Produit['image']}}"></br>
-	{{$Produit['price']}}</br>
-	</br>
-	@endforeach
+    <h1>Catalogue</h1>
+    @foreach($articlePanier as $produit)
+        {{$produit['title']}}<br>
+        {{$produit['description']}}<br>
+        <img src="{{$produit['image']}}"><br>
+        {{$produit['price']}}<br>
+        <br>
+    @endforeach
 @endsection
