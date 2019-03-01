@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+require('catalog.php');
 
 class ProductController extends Controller
 {
@@ -25,10 +28,17 @@ class ProductController extends Controller
 
     }
 
-    public function show()
+    public function show($id)
     {
+        global $products;
+        $myproduct = null;
 
-
+        foreach ($products as $product) {
+            if ($product['id'] == $id) {
+                $myproduct = $product;
+            }
+        }
+        return view('/product', ['myproduct' => $myproduct]);
     }
 
     public function edit()
