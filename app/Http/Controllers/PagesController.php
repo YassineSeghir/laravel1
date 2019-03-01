@@ -27,9 +27,6 @@ class PagesController extends Controller
 
     public function showHome()
     {
-
         return view('homepage');
     }
 }
-
-
