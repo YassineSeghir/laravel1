@@ -1,6 +1,7 @@
 @extends('layout')
 @section('title', 'Catalogue')
 @section('content')
+
     <h1>Catalogue</h1>
     @foreach($articleBasket as $produit)
         {{$produit['title']}}<br>

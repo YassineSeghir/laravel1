@@ -7,6 +7,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Pacifico" rel="stylesheet">
     <!--styles-->
+    <link href="{{ asset ('css/app.css')}}" rel="stylesheet">
     <link href="{{ asset ('css/style.css')}}" rel="stylesheet">
     <!--Font awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
@@ -29,13 +30,13 @@
         </div>
     @endif
 </div>
-<nav class="bande">
+<nav>
     @include('includes.navbar')
 </nav>
-<div class="bande">
+<div>
     @yield('content')
 </div>
-<footer class="bande">
+<footer>
     @include('includes.footer')
 </footer>
 </body>
