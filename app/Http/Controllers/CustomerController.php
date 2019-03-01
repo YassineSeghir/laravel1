@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-class ProductController extends Controller
+class CustomerController extends Controller
 {
 
     public function index()
@@ -48,6 +48,7 @@ class ProductController extends Controller
 
 
     }
+
 
 }
 
