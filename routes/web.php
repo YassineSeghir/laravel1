@@ -3,7 +3,7 @@
 Route::get('/pages/cgv', 'PagesController@showCGV');
 Route::get('/pages/mentions', 'PagesController@showMentions');
 Route::get('/pages/contact', 'PagesController@showContact');
-Route::get('/homepage', 'PagesController@showHome');
+Route::get('/', 'PagesController@showHome');
 
 
 Route::get('/panier', 'BasketController@showPanier');
@@ -26,3 +26,4 @@ Route::get('/customer/{id}', 'CustomerController@show');
 Route::get('/customer/{id}/edit', 'CustomerController@edit');
 Route::put('/customer/{id}', 'CustomerController@update');
 Route::delete('/customer/{id}', 'CustomerController@destroy');
+
