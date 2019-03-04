@@ -27,3 +27,5 @@ Route::get('/customer/{id}/edit', 'CustomerController@edit');
 Route::put('/customer/{id}', 'CustomerController@update');
 Route::delete('/customer/{id}', 'CustomerController@destroy');
 
+
+
