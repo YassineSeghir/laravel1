@@ -35,7 +35,7 @@ class CatalogController extends Controller
             ]
 
         ];
-        return view('catalog', ['articleBasket' => $product);
+        return view('catalog', ['articleBasket' => $product]);
     }
 }
 
