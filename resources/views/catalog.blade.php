@@ -15,7 +15,7 @@
     @foreach($catalog as $catalog)
 
         {{$catalog->NAME}}<br>
-        <img src=" {{asset($catalog->NAME_IMG)}}" >
+        <img src=" {{asset($catalog->NAME_IMG)}}" ><br>
         {{$catalog->DESCRIPTION}}<br>
         {{$catalog->PRICE}}€<br>
         <br>

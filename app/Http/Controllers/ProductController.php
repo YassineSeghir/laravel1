@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 require('catalog.php');
 
@@ -30,20 +31,15 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        global $products;
-        $myproduct = null;
 
-        foreach ($products as $product) {
-            if ($product['id'] == $id) {
-                $myproduct = $product;
-            }
-        }
-        return view('/product', ['myproduct' => $myproduct]);
+
+        $myproduct = DB::select('select * from article where ID_ARTICLE = :id ', ['id'=>$id]) ;
+        //dd($myproduct[0]);
+        return view('/product', ['myproduct' => $myproduct[0]]);
     }
 
     public function edit()
     {
-
 
     }
 
