@@ -9,7 +9,9 @@ Route::get('/', 'PagesController@showHome');
 Route::get('/panier', 'BasketController@showPanier');
 
 Route::get('/catalogue', 'CatalogController@showCatalog');
+
 Route::get('/login', 'SuperadminController@showAdmin');
+
 
 Route::get('/product', 'ProductController@index');
 Route::get('/product/create', 'ProductController@create');
