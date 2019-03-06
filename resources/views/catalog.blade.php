@@ -13,9 +13,9 @@
     <h1>Catalogue</h1>
 
     @foreach ($product as $products)
-        {{$products->NAME}}<br>
-        {{$products->DESCRIPTION}}<br>
-        {{$products->PRICE}}€<br>
+        {{$products->name}}<br>
+        {{$products->descrition}}<br>
+        {{$products->price/100}} €<br>
         <br>
 
     @endforeach

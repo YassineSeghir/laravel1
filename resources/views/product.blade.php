@@ -2,9 +2,9 @@
 @section('title', 'Produit')
 @section('content')
 
-        {{$product->NAME}}<br>
-        {{$product->DESCRIPTION}}<br>
-        {{$product->PRICE}}€<br>
+        {{$product->name}}<br>
+        {{$product->description}}<br>
+        {{$product->price/100}} €<br>
         <br>
 
 @endsection
