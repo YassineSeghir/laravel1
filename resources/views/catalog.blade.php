@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Notre catalogue')
+@section('title', 'Catalogue')
 @section('content')
     <div class="jumbotron jumbotron-fluid btm">
         <div class="container">
@@ -13,19 +13,19 @@
                 <tr>
                     <th scope="col">Titre</th>
                     <th scope="col">Image</th>
-                    <th scope="col">Prix unitaire HT </th>
-                    <th scope="col center">Voir le produit</th>
+                    <th scope="col">Prix unitaire HT</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($article as $art)
+                @foreach($products as $product)
                     <tr>
-                        <td style="width:400px"><h4>{{$art->NAME}}</h4></td>
-                        <td><img src="images/{{$art->NAME_IMG}}" class="imgbasket"></td>
-                        <td>{{number_format($art->PRICE,2)}}</td>
-                         <td>
-                            <a href="{{$art->ID_ARTICLE}}"><i class="far fa-eye" style="font-size: 20px"></i></a>
+                        <td style="width:400px"><h4>{{$product->name}}</h4></td>
+                        <td>
+                            <a href="{{url('product/'.$product->id)}}">
+                                <img src="{{asset('images/'.$product->imgURL)}}" alt="{{$product->name}}" class="imgbasket">
+                            </a>
                         </td>
+                        <td>{{$product->price/100}} €</td>
                     </tr>
                 @endforeach
                 </tbody>

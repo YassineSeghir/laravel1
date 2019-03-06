@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
-require('catalog.blade.php');
 
 class ProductController extends Controller
 {
@@ -13,49 +12,43 @@ class ProductController extends Controller
     public function index()
     {
 
-
     }
 
     public function create()
     {
-
 
     }
 
     public function store()
     {
 
-
     }
 
     public function show($id)
     {
-        global $products;
-        $myproduct = null;
-
-        foreach ($products as $product) {
-            if ($product['id'] == $id) {
-                $myproduct = $product;
-            }
-        }
-        return view('/product', ['myproduct' => $myproduct]);
+        $product = DB::select('
+                                SELECT a.id, a.name, a.description, a.price, i.imgURL
+                                FROM article AS a
+                                  INNER JOIN asso_article_img AS aai ON aai.id_article = a.id
+                                  INNER JOIN images AS i ON i.id = aai.id_image
+                                WHERE a.id = :id',
+                                ['id' => $id]
+                                );
+        return view('product', ['product' => $product[0]]);
     }
 
     public function edit()
     {
-
 
     }
 
     public function update()
     {
 
-
     }
 
     public function destroy()
     {
-
 
     }
 

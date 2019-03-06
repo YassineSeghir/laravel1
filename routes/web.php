@@ -1,24 +1,15 @@
 <?php
 
+Route::get('/', 'PagesController@showHome');
 Route::get('/pages/cgv', 'PagesController@showCGV');
 Route::get('/pages/mentions', 'PagesController@showMentions');
 Route::get('/pages/contact', 'PagesController@showContact');
 
-Route::get('/', 'PagesController@showHome');
 
-// Panier :
 Route::get('/panier', 'BasketController@showPanier');
 
-
-// VOIR LE CATALOGUE
 Route::get('/catalogue', 'CatalogController@index');
-
-
-Route::get('/Page_Admin', 'SuperadminController@showAdmin');
-
 Route::get('/login', 'SuperadminController@showAdmin');
-
-
 
 Route::get('/product', 'ProductController@index');
 Route::get('/product/create', 'ProductController@create');
@@ -27,7 +18,6 @@ Route::get('/product/{id}', 'ProductController@show');
 Route::get('/product/{id}/edit', 'ProductController@edit');
 Route::put('/product/{id}', 'ProductController@update');
 Route::delete('/product/{id}', 'ProductController@destroy');
-
 
 Route::get('/customer', 'CustomerController@index');
 Route::get('/customer/create', 'CustomerController@create');

@@ -3,9 +3,11 @@
 @section('content')
     <div class="bande">
         <div class="container">
-            <h2>{{$myproduct['title']}}</h2>
-            <p>{{$myproduct['description']}}</p>
-            <img src="{{$myproduct['image']}}" width="800px" height="800px"/>
+            <h4>{{$product->name}}</h4>
+            <img src="{{asset('images/'.$product->imgURL)}}" alt="{{$product->name}}" height="300px" width="300px">
+            <p>{{$product->description}}</p>
+            <p>{{$product->price}}</p>
+            <br /><br />
         </div>
     </div>
 @endsection
