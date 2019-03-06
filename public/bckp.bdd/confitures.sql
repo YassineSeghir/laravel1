@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 06 mars 2019 à 08:27
+-- Généré le :  mer. 06 mars 2019 à 11:07
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.3.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `confitures`
+-- Base de données :  `order`
 --
 
 -- --------------------------------------------------------
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `article` (
 INSERT INTO `article` (`id`, `name`, `description`, `price`, `weight`, `stock`, `id_cat`) VALUES
 (5, 'Confiture de figues', 'Délicieuses figues fermentées, cuites dans du vin durant 48 heures. A tester absolument.', 1215, 200, 58, 1),
 (6, 'Confiture d\'abricots', 'Abricots aux rhums des îles Kerguelen, une merveille de goût.', 230, 300, 12, 3),
-(7, 'Confiture aux fruits des bois', 'On nous recommande de manger tous les jours des fruits rouges ! Voilà qui sera fait avec cette confiture succulente, finement aromatisée au Jack Daniel\'s.', 21, 350, 0, 1),
+(7, 'Confiture aux fruits des bois', 'On nous recommande de manger tous les jours des fruits rouges ! Voilà qui sera fait avec cette confiture succulente, finement aromatisée au Jack Daniel\'s.', 210, 350, 0, 1),
 (9, 'Gelée de gnôle', 'De la gnôle et du sucre ! Du bonheur !', 250, 230, 123, 4),
 (10, 'Confiture de pamplemousse', 'A découvrir absolument. Un Pamplemousse mariné 6 semaines dans du vin blanc de Savoie. Acidulée et pétillante cette confiture est idéale au petit déjeuner. ', 320, 450, 0, 2),
 (11, 'Confiture de prunes', 'Prunes ramassées à maturité. Aromatisées subtilement arrosées de vodka.', 2500, 123, 12, 1),
@@ -90,10 +90,10 @@ INSERT INTO `article` (`id`, `name`, `description`, `price`, `weight`, `stock`, 
 (14, 'Gelée de Cognac', 'Et si l\'envie d\'un XO vous prenait de bon matin ? ', 850, 540, 2, 1),
 (15, 'Coffret du voyageur', 'Pour amener avec vous vos produits préférés. Choisissez ce coffret en cuir vegan sécurisé et discret. ', 9800, 400, 10, 1),
 (16, 'Spécial coktails', 'Un échantillon de tous nos produits pour vos soirées les plus folles !', 1000, 3000, 20, 1),
-(17, 'Gelée de VODKA', 'Dans la série des classiques, une confiture de vodka bison. A tester cet hivers !', 50, 10, 1, 1),
+(17, 'Gelée de VODKA', 'Dans la série des classiques, une confiture de vodka bison. A tester cet hivers !', 500, 10, 1, 1),
 (18, 'Confiture à la bière light', 'Tout spécialement pour vous qui êtes au régime mais qui aimez les bonnes choses ....', 400, 5287, 1, 3),
 (19, 'Gelée de Guiness', 'Dans la série des classiques qui nourrissent bien !', 964, 750, 1, 3),
-(20, 'Confiture de Kronembourg', 'Encore un classique spécial Gilets Jaunes. Parce que tout le monde à le droit à la qualité. ', 10, 1, 1230, 3),
+(20, 'Confiture de Kronembourg', 'Encore un classique spécial Gilets Jaunes. Parce que tout le monde à le droit à la qualité. ', 1000, 1, 1230, 3),
 (21, 'Pâtes de fruits à la Tequila', 'AïeAïeAïe ! Voilà qui fera chanter les goûters de vos enfants !', 474, 1513, 20, 1),
 (22, 'Confiture de Gin', 'Encore un classique de notre boutique, efficace et authentique. A manger le matin, le midi et le soir. ', 807, 123, 52, 1),
 (23, 'La Confiture Matignon', 'Spécialement composée par le chef étoilé Jacques DUPONT sur demande du président Emmanuel BENALLA. Une gelée de fayots arrosée de vipérine. ', 9874, 120, 0, 1),
