@@ -4,19 +4,21 @@ Route::get('/pages/cgv', 'PagesController@showCGV');
 Route::get('/pages/mentions', 'PagesController@showMentions');
 Route::get('/pages/contact', 'PagesController@showContact');
 
-
-Route::get('/homepage', 'PagesController@showHome');
-
-
+Route::get('/', 'PagesController@showHome');
 
 // Panier :
 Route::get('/panier', 'BasketController@showPanier');
 
+
 // VOIR LE CATALOGUE
-Route::get('/catalogue', 'CatalogueController@index');
+Route::get('/catalog', 'CatalogController@index');
 //-----------------------------------------
 
 Route::get('/Page_Admin', 'SuperadminController@showAdmin');
+
+Route::get('/catalogue', 'CatalogController@showCatalog');
+Route::get('/login', 'SuperadminController@showAdmin');
+
 
 
 Route::get('/product', 'ProductController@index');
@@ -35,3 +37,6 @@ Route::get('/customer/{id}', 'CustomerController@show');
 Route::get('/customer/{id}/edit', 'CustomerController@edit');
 Route::put('/customer/{id}', 'CustomerController@update');
 Route::delete('/customer/{id}', 'CustomerController@destroy');
+
+
+
