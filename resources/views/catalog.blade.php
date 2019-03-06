@@ -1,14 +1,35 @@
 @extends('layout')
 @section('title', 'Catalogue')
 @section('content')
-    <h1>Catalogue</h1>
-    @foreach($products as $product)
-
-        <a href="{{url('product/'.$product->id)}}">
-            <img src="{{asset('images/'.$product->imgURL)}}" alt="{{$product->name}}" height="30px" width="30px">
-        </a>
-        <h4>{{$product->name}}</h4>
-        <p>{{$product->price}}</p>
-
-    @endforeach
+    <div class="jumbotron jumbotron-fluid btm">
+        <div class="container">
+            <h1 class="display-4">Notre catalogue</h1>
+        </div>
+    </div>
+    <div class="container btm">
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Prix unitaire HT</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($$products as $product)
+                    <tr>
+                        <td style="width:400px"><h4>{{$product->name}}</h4></td>
+                        <td>
+                            <a href="{{url('product/'.$product->id)}}">
+                                <img src="{{asset('images/'.$product->imgURL)}}" alt="{{$product->name}}" class="imgbasket">
+                            </a>
+                        </td>
+                        <td>{{$product->price/100;'€'}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection

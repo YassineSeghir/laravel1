@@ -15,6 +15,7 @@ class BasketController extends Controller
                 'image' => '../images/conf_figues.jpg',
                 'qty' => '15',
                 'price' => '15',
+                'totalLigne' => '',
             ],
 
             [
@@ -23,6 +24,7 @@ class BasketController extends Controller
                 'image' => '../images/conf_rhum.jpg',
                 'qty' => '15',
                 'price' => '42',
+                'totalLigne' => '',
             ],
 
             [
@@ -31,23 +33,20 @@ class BasketController extends Controller
                 'image' => 'https://w2.comptoir-irlandais.com/10289-thickbox_default/jack-daniels-single-barrel-rye.jpg',
                 'qty' => '15',
                 'price' => '12',
+                'totalLigne' => '',
             ]
 
         ];
 
-        $totalLigne = 0;
-        $total = 0;
-        foreach($test as $ligne){
+        foreach($test as $key => $ligne){
             $totalLigne = $ligne['qty'] * $ligne['price'];
-            //$total = $totalLigne + $total;
-            $total += $total;
+            $test[$key]['totalLigne'] = $totalLigne;
         }
-
-
-
-        // affiche view panier créé la variable toto qui a le contenu de $test
-     // return view('panier',['panier' => $test]);
-    //    return view('panier',['panier' => $total]);
+        return view('panier', ['panier' => $test]);
     }
+
 }
+
+    /*
+
 

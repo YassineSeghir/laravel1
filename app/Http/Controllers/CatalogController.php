@@ -19,6 +19,7 @@ class CatalogController extends Controller
                                 FROM article AS a
                                   INNER JOIN asso_article_img AS aai ON aai.id_article = a.id
                                   INNER JOIN images AS i ON i.id = aai.id_image
+                                  ORDER BY NAME ASC
                                 ');
         return view('catalog', ['products' => $products]);
     }
