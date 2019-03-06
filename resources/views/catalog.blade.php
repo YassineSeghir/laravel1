@@ -17,7 +17,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($$products as $product)
+                @foreach($products as $product)
                     <tr>
                         <td style="width:400px"><h4>{{$product->name}}</h4></td>
                         <td>
@@ -25,7 +25,7 @@
                                 <img src="{{asset('images/'.$product->imgURL)}}" alt="{{$product->name}}" class="imgbasket">
                             </a>
                         </td>
-                        <td>{{$product->price/100;'€'}}</td>
+                        <td>{{$product->price/100}} €</td>
                     </tr>
                 @endforeach
                 </tbody>
