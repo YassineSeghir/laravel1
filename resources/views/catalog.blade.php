@@ -21,7 +21,7 @@
                 @foreach($article as $art)
                     <tr>
                         <td style="width:400px"><h4>{{$art->NAME}}</h4></td>
-                        <td><img src="images/{{$art->NAME_IMG}}" class="imgbasket"></td>
+                        <td><img src="{{$art->NAME_IMG}}" class="imgbasket"></td>
                         <td>{{number_format($art->PRICE,2)}}</td>
                          <td>
                             <a href="{{$art->ID_ARTICLE}}"><i class="far fa-eye" style="font-size: 20px"></i></a>

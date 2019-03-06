@@ -17,7 +17,7 @@ class CatalogController extends Controller
                 ON images.ID_IMAGE = asso_article_img.ID_IMAGE
                 ORDER BY NAME ASC
                                 ');
-        return view('catalogue', ['article' => $article]);
+        return view('catalog', ['article' => $article]);
 
 
     }
