@@ -2,10 +2,9 @@
 @section('title', 'Produit')
 @section('content')
 
-        {{$myproduct->NAME}}<br>
-       {{--<img src=" {{asset($myproducts->NAME_IMG)}}" ><br>--}}
-        {{$myproduct->DESCRIPTION}}<br>
-        {{$myproduct->PRICE}}€<br>
+        {{$product->NAME}}<br>
+        {{$product->DESCRIPTION}}<br>
+        {{$product->PRICE}}€<br>
         <br>
 
 @endsection

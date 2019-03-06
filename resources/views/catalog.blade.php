@@ -12,12 +12,10 @@
 
     <h1>Catalogue</h1>
 
-    @foreach($catalog as $catalog)
-
-        {{$catalog->NAME}}<br>
-        <img src=" {{asset($catalog->NAME_IMG)}}" ><br>
-        {{$catalog->DESCRIPTION}}<br>
-        {{$catalog->PRICE}}€<br>
+    @foreach ($product as $products)
+        {{$products->NAME}}<br>
+        {{$products->DESCRIPTION}}<br>
+        {{$products->PRICE}}€<br>
         <br>
 
     @endforeach
