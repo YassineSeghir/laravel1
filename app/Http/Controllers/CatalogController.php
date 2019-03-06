@@ -11,7 +11,7 @@ class CatalogController extends Controller
 
     public function showCatalog()
     {
-        $products = app\Product::all();
+        $products = app\Product::all()->sortBy('name');
 
 
         return view('catalog', ["product" => $products]);
