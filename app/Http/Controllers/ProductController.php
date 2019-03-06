@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-require('catalog.php');
+require('catalog.blade.php');
 
 class ProductController extends Controller
 {

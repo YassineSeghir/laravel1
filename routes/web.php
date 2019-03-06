@@ -11,12 +11,11 @@ Route::get('/panier', 'BasketController@showPanier');
 
 
 // VOIR LE CATALOGUE
-Route::get('/catalog', 'CatalogController@index');
-//-----------------------------------------
+Route::get('/catalogue', 'CatalogController@index');
+
 
 Route::get('/Page_Admin', 'SuperadminController@showAdmin');
 
-Route::get('/catalogue', 'CatalogController@showCatalog');
 Route::get('/login', 'SuperadminController@showAdmin');
 
 
