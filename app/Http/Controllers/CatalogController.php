@@ -2,41 +2,90 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CatalogController extends Controller
 {
-
-    public function showCatalog()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        $product = [
-            [
-                'id' => 0,
-                'title' => 'Confiture de figues',
-                'description' => 'Délicieuses figues fermentées, cuites dans du vin durant 48 heures. A tester absolument.',
-                'image' => "../images/conf_figues.jpg",
-                'price' => '15€',
-            ],
+        $products = DB::select('
+                                SELECT a.id, a.name, a.price, i.imgURL
+                                FROM article AS a
+                                  INNER JOIN asso_article_img AS aai ON aai.id_article = a.id
+                                  INNER JOIN images AS i ON i.id = aai.id_image
+                                ');
+        return view('catalog', ['products' => $products]);
+    }
 
-            [
-                'id' => 1,
-                'title' => 'Confiture d\'abricots',
-                'description' => 'Abricots aux rhums des îles Kerguelen, une merveille de goût. ',
-                'image' => "../images/conf_rhum.jpg",
-                'price' => '42€',
-            ],
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
-            [
-                'id' => 2,
-                'title' => 'Confiture aux fruits des bois',
-                'description' => 'On nous recommande de manger tous les jours des fruits rouges ! Voilà qui sera fait avec cette confiture succulente, finement aromatisée au Jack Daniel\'s.',
-                'image' => "https://w2.comptoir-irlandais.com/10289-thickbox_default/jack-daniels-single-barrel-rye.jpg",
-                'price' => '12€',
-            ]
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
 
-        ];
-        return view('catalog', ['articleBasket' => $product]);
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
-
-

@@ -1,14 +1,14 @@
 <?php
 
+Route::get('/', 'PagesController@showHome');
 Route::get('/pages/cgv', 'PagesController@showCGV');
 Route::get('/pages/mentions', 'PagesController@showMentions');
 Route::get('/pages/contact', 'PagesController@showContact');
-Route::get('/', 'PagesController@showHome');
 
 
 Route::get('/panier', 'BasketController@showPanier');
 
-Route::get('/catalogue', 'CatalogController@showCatalog');
+Route::get('/catalogue', 'CatalogController@index');
 Route::get('/login', 'SuperadminController@showAdmin');
 
 Route::get('/product', 'ProductController@index');

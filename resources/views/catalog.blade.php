@@ -1,22 +1,14 @@
 @extends('layout')
 @section('title', 'Catalogue')
 @section('content')
-    <style>
-        img {
-            height: 110px;
-            min-width: 90px;
-            border-radius: 5px;
-            border: solid 1px #000;
-
-        }
-    </style>
-
     <h1>Catalogue</h1>
-    @foreach($articleBasket as $produit)
-        {{$produit['title']}}<br>
-        {{$produit['description']}}<br>
-        <img src="{{$produit['image']}}"><br>
-        {{$produit['price']}}<br>
-        <br>
+    @foreach($products as $product)
+
+        <a href="{{url('product/'.$product->id)}}">
+            <img src="{{asset('images/'.$product->imgURL)}}" alt="{{$product->name}}" height="30px" width="30px">
+        </a>
+        <h4>{{$product->name}}</h4>
+        <p>{{$product->price}}</p>
+
     @endforeach
 @endsection
