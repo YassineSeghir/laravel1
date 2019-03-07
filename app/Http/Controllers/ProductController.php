@@ -14,6 +14,10 @@ class ProductController extends Controller
     public function index()
     {
 
+        $products = app\Product::orderBy('price' , 'desc')->get();
+
+
+        return view('catalog', ["product" => $products]);
 
     }
 
@@ -32,6 +36,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $products = app\Product::find($id);
+
 
         return view('product', ['product' => $products]);
     }

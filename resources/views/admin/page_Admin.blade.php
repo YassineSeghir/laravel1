@@ -1,5 +1,5 @@
-@extends('layoutAdmin')
-@section('title', 'Page Admin')
+@extends('admin.layoutAdmin')
+@section('title','Admin')
 @section('container')
     <form action="#" method="GET">
         <h1>Admin Connexion</h1>
