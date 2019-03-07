@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
+
 use App\Http\Controllers\Controller;
 
 
@@ -16,25 +19,44 @@ class ProductController extends Controller
 
     public function create()
     {
-
+        return view('product.create');
     }
-
-    public function store()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
+        {
+            $article = new \App\Article();
+          // dd($article);
+            $article->name = $request->input('name');
+            $article->description = $request->input('description');
+            $article->price = $request->input('price');
+            $article->weight = $request->input('weight');
+            $article->stock = $request->input('stock');
+            $article->id_cat = $request->input('cat');
 
+            $article->save();
+
+            return redirect("/catalog");
+        }
     }
 
     public function show($id)
     {
-        $product = DB::select('
-                                SELECT a.id, a.name, a.description, a.price, i.imgURL
-                                FROM article AS a
-                                  INNER JOIN asso_article_img AS aai ON aai.id_article = a.id
-                                  INNER JOIN images AS i ON i.id = aai.id_image
-                                WHERE a.id = :id',
-                                ['id' => $id]
-                                );
-        return view('product', ['product' => $product[0]]);
+        $article = DB::select('
+            SELECT a.id, a.name, a.description, a.price, i.imgURL
+            FROM articles AS a
+              INNER JOIN asso_article_img AS aai ON aai.id_article = a.id
+              INNER JOIN images AS i ON i.id = aai.id_image
+            WHERE a.id = :id',
+                ['id' => $id]
+            );
+         // dd($article);
+           return view('product', ['article' => $article[0]]);
     }
 
     public function edit()
@@ -47,9 +69,9 @@ class ProductController extends Controller
 
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-
+        return view('homepage');
     }
 
 }

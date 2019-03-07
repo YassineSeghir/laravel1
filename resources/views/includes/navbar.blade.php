@@ -11,7 +11,7 @@
                     <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="../catalogue">Catalogue <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../catalog">Catalogue <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/pages/contact">Contact <span class="sr-only">(current)</span></a>

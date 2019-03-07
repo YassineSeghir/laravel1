@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Catalogue')
+@section('title', 'Catalogue de nos produits')
 @section('content')
     <div class="jumbotron jumbotron-fluid btm">
         <div class="container">
@@ -8,26 +8,30 @@
     </div>
     <div class="container btm">
         <div class="row">
+        </div>
+    </div>
+    <div class="container btm">
+        <div class="row">
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">Titre</th>
-                    <th scope="col">Image</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Prix unitaire HT</th>
+                    <th scope="col">Voir</th>
+                    <th scope="col">Supprimer</th>
                 </tr>
                 </thead>
-                <tbody>
-                @foreach($products as $product)
+                @foreach($articles as $article)
                     <tr>
-                        <td style="width:400px"><h4>{{$product->name}}</h4></td>
-                        <td>
-                            <a href="{{url('product/'.$product->id)}}">
-                                <img src="{{asset('images/'.$product->imgURL)}}" alt="{{$product->name}}" class="imgbasket">
-                            </a>
-                        </td>
-                        <td>{{$product->price/100}} €</td>
+                         <td>{{$article->name}}</td>
+                        <td>{{$article->description}}</td>
+                        <td>{{number_format($article->price/100,2)}} €</td>
+                        <td><a href="{{url('product/'.$article->id)}}"><i class="fas fa-eye"></i></a></td>
+                        <td><a href="{{url('product.destroy'.$article->id)}}"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                 @endforeach
+                <tbody>
                 </tbody>
             </table>
         </div>

@@ -45,7 +45,6 @@ h1.panier {
 	display:inline-block;
 	width:30%;
 }
- 
 .title {
 	color:#c99d66!important;
 	margin-left:20px !important;
@@ -99,12 +98,12 @@ h5 {
     margin: 0 auto;
 }
  h5 span {
-
 	 color:#0082FF;
  }
 .icon {
     text-align: center;
 }
+.fa-eye { color:#000}
 .center {
 	text-align:center;
 }
