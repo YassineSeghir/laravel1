@@ -5,13 +5,9 @@ Route::get('/pages/cgv', 'PagesController@showCGV');
 Route::get('/pages/mentions', 'PagesController@showMentions');
 Route::get('/pages/contact', 'PagesController@showContact');
 
-
 Route::get('/panier', 'BasketController@showPanier');
 
-Route::get('/catalogue', 'CatalogController@index');
-Route::get('/login', 'SuperadminController@showAdmin');
-
-Route::get('/product', 'ProductController@index');
+Route::get('/catalogue', 'ProductController@index');
 Route::get('/product/create', 'ProductController@create');
 Route::post('/product', 'ProductController@store');
 Route::get('/product/{id}', 'ProductController@show');
