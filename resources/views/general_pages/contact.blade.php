@@ -10,7 +10,7 @@
                     <h2 class="panel-title">Contact</h2>
                 </div>
                 <div class="panel-body">
-                    <form class="" action="/?????" method="post">
+                    <form class="" action="#" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="nom">Nom</label>

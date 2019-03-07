@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -29,7 +30,7 @@ class ProductController extends Controller
 //         dump(App\Product::all());
 
 //         $products = App\Product::all()->sortBy('price');                 //SQL equivalent to SELECT * FROM article
-        $products = App\Product::orderBy('price', 'desc')->get();        //SQL equivalent to SELECT * FROM article ORDER BY name DESC
+        $products = Product::orderBy('price', 'asc')->get();        //SQL equivalent to SELECT * FROM article ORDER BY name DESC
 //*******************************************************************
 
         return view('catalog', ['products' => $products]);
@@ -37,12 +38,23 @@ class ProductController extends Controller
 
     public function create()
     {
-
+        return view('product/create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+//        dd($request);
+        $product = new Product();
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->weight = $request->input('weight');
+        $product->stock = $request->input('stock');
+        $product->id_cat = $request->input('id_cat');
+//        dd($product);
+        $product->save();
 
+        return view('product/result', ['product' => $product]);
     }
 
     public function show($id)

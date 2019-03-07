@@ -1,19 +1,21 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{str_replace('_', '-', app()->getLocale())}}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather|Pacifico" rel="stylesheet">
-    <!--styles-->
-    <link href="{{ asset ('css/app.css')}}" rel="stylesheet">
-    <link href="{{ asset ('css/style.css')}}" rel="stylesheet">
-    <!--Font awesome-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Pacifico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
           crossorigin="anonymous">
+    <!--styles-->
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
 </head>
+
 <body>
 <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
@@ -40,4 +42,5 @@
     @include('includes.footer')
 </footer>
 </body>
+
 </html>
