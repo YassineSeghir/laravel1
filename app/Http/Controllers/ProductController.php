@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = app\Product::orderBy('price' , 'desc')->get();
+        $products = app\Product::orderBy('price' , 'asc')->get();
 
 
         return view('catalog', ["product" => $products]);
