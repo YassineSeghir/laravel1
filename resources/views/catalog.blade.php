@@ -7,7 +7,7 @@
             min-width: 90px;
             border-radius: 5px;
             border: solid 1px #000;
-
+        }
 
 
     </style>
@@ -26,3 +26,4 @@
 @endsection
 
 
+sta
