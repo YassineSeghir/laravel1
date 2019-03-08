@@ -18,12 +18,11 @@
         {{$products->name}}<br>
         {{$products->description}}<br>
         {{$products->price/100}} €<br>
-        <a class="btn btn-success btn-lg" href="{{url('product/'.$products->id)}}"role="button">fiche produit</a><br>
+        <a class="btn btn-success btn-lg" href="{{url('product/'.$products->id)}}"role="button">Fiche produit</a><br>
         <br>
 
     @endforeach
-
+    <a class="btn btn-success btn-lg" href="{{url('admin/productcreate')}}"role="button">Ajouter produit</a><br>
 @endsection
 
 
-sta
