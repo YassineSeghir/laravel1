@@ -14,7 +14,7 @@
 
     @foreach ($product as $products)
         {{$products->name}}<br>
-        {{$products->descrition}}<br>
+        {{$products->description}}<br>
         {{$products->price/100}} €<br>
         <br>
 
