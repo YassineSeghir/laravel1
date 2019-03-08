@@ -16,6 +16,7 @@
         {{$products->name}}<br>
         {{$products->description}}<br>
         {{$products->price/100}} €<br>
+
         <br>
 
     @endforeach

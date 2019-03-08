@@ -15,12 +15,12 @@ class SuperadminController extends Controller
     }
 
     public function create()
-    {
+{
 
 
     return view('admin.productcreate');
 
-    }
+}
 
     public function store(Request $request)
     {
@@ -40,7 +40,7 @@ class SuperadminController extends Controller
 
     public function show()
     {
-
+ 
 
     }
 
