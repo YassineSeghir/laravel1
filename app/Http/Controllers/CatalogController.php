@@ -10,13 +10,19 @@ use App\Article;
 class CatalogController extends Controller
 {
 
-    public function showCatalog()
+        public function showCatalog(Request $request)
     {
-      $articles = Article::all();
-     // $articles = Article::all()->whereIn('id', [5,10,11]);
+        $articles = Article::all();
+        // $articles = Article::all()->whereIn('id', [5,10,11]);
         $articles = Article::all()->sortBy('name');
-
-       return view('catalog', compact('articles'));
+        //Pour afficher le catalogue dans la page front ou dans le backoffice
+        $url = $request->path();
+        if ($url == 'admin/administration') {
+            return view('admin/administration', compact('articles'));
+        }
+        else{
+            return view('catalog', compact('articles'));
+        }
     }
 
 

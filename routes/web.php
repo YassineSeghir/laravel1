@@ -13,19 +13,31 @@ Route::get('/panier', 'BasketController@showPanier');
 
 Route::get('/catalog', 'CatalogController@showCatalog');
 
+Route::post('/catalog', 'ProductController@store');
+
+
+//ADMINISTRATION
 
 Route::get('/login', 'SuperadminController@showAdmin');
 
+// Voir le catalogue dans l'administration :
+Route::get('/admin/administration', 'CatalogController@showCatalog')->name('back');
+Route::get('/admin/product/{id}', 'ProductController@show');
 
-Route::get('/product', 'ProductController@index');
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Passer dans l'admin :
 Route::get('/product/create', 'ProductController@create');
-Route::post('/catalog', 'ProductController@store');
-
+//PRODUITS
 Route::get('/product/{id}', 'ProductController@show');
-Route::get('/product/{id}/edit', 'ProductController@edit');
-Route::put('/product/{id}', 'ProductController@update');
-Route::delete('/product/{id}', 'ProductController@destroy');
 
+//SUPPRIMER UN PRODUIT delete = post
+Route::delete('/admin/product/{id}', 'ProductController@destroy')->name('destroy');
+
+//EDITER UN PRODUIT
+Route::get('/admin/edit', 'ProductController@edit');
+
+
+Route::put('/product/{id}', 'ProductController@update');
 
 Route::get('/customer', 'CustomerController@index');
 Route::get('/customer/create', 'CustomerController@create');

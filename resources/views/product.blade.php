@@ -6,13 +6,15 @@
             <h1 class="display-4">Produit</h1>
         </div>
     </div>
-    <div class="bande">
-        <div class="container">
-            <h4>{{$article->name}}</h4>
-            <img src="{{asset('images/'.$article->imgURL)}}" alt="{{$article->name}}" height="300px" width="300px">
-            <p>{{$article->description}}</p>
-            <p>{{$article->price}}</p>
-            <br /><br />
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h3>{{$article->name}}</h3>
+                <img src="{{asset('images/'.$article->imgURL)}}" alt="{{$article->name}}">
+            </div>
+            <div class="col-4"><p>{{$article->description}}</p>
+                <p>{{number_format($article->price/100,2)}} €</p></div>
         </div>
     </div>
+
 @endsection

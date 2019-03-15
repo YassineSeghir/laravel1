@@ -6,14 +6,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav justify-content-end">
+
             <li class="nav-item active">
-                <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../admin/administration">Catalogue</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../catalog">Catalogue <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../admin/edit">Editer</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/pages/contact">Contact <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../product/create">Ajouter un produit </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../product/create">Voir user</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/pages/contact">Ajouter user</a>
             </li>
         </ul>
     </div>
