@@ -4,12 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Image extends Model
 {
-    protected $table = 'article';
-
+    protected $table = 'images';
 
 
 }
-
-
