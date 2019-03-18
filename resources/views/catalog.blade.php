@@ -14,11 +14,12 @@
 
     <h1>Catalogue</h1>
 
-    @foreach ($product as $products)
-        {{$products->name}}<br>
-        {{$products->description}}<br>
-        {{$products->price/100}} €<br>
-        <a class="btn btn-success btn-lg" href="{{url('product/'.$products->id)}}"role="button">Fiche produit</a><br>
+    @foreach ($products as $product)
+        {{$product->name}}<br>
+        <img src="{{asset($product->image->imgURL)}}"><br>
+        {{$product->description}}<br>
+        {{$product->price/100}} €<br>
+        <a class="btn btn-success btn-lg" href="{{url('product/'.$product->id)}}"role="button">Fiche produit</a><br>
         <br>
 
     @endforeach
