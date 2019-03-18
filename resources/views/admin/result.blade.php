@@ -24,6 +24,8 @@
             <h3>Categorie</h3>
             <p>valeur : <b>{{ $product['id_cat'] }}</b></p>
 
+            <h3>Categorie</h3>
+            <p>valeur : <b>{{ $product['image_id'] }}</b></p>
         </div>
     </div>
 

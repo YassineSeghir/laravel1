@@ -16,6 +16,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/pages/contact">Contact <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../panier">Panier <span class="sr-only">(current)</span></a>
+                </li>
             </ul>
         </div>
     </nav>

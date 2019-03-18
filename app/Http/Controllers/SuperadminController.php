@@ -32,6 +32,7 @@ class SuperadminController extends Controller
         $product->weight = $request->input('weight');
         $product->stock = $request->input('stock');
         $product->id_cat = $request->input('id_cat');
+        $product->image_id = $request->input('image_id');
         $product->save();
 
         return view('admin.result',['product'=>$product]);

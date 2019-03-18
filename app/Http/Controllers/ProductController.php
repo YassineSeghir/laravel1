@@ -6,7 +6,7 @@ use App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-require('catalog.php');
+
 
 class ProductController extends Controller
 {
