@@ -6,17 +6,17 @@ Route::get('/pages/mentions', 'PagesController@showMentions');
 Route::get('/pages/contact', 'PagesController@showContact');
 
 //Route::get('/panier', 'BasketController@showPanier');
-//
+
 //Route::get('/admin', 'AdminController@index');
 
-Route::get('/catalog', 'ProductController@index');
+Route::get('product/catalog', 'ProductController@index');
 Route::get('/product/create', 'ProductController@create');
-Route::post('/product/result', 'ProductController@store');
+Route::post('/product/created', 'ProductController@store');
 Route::get('/product/{id}', 'ProductController@show');
-//Route::get('/product/{id}/edit', 'ProductController@edit');
-//Route::put('/product/{id}', 'ProductController@update');
-//Route::delete('/product/{id}', 'ProductController@destroy');
-//
+Route::get('/product/{id}/edit', 'ProductController@edit');
+Route::post('/product/{id}/edited', 'ProductController@update');
+Route::get('/product/{id}/delete', 'ProductController@destroy');
+
 //Route::get('/customer', 'CustomerController@index');
 //Route::get('/customer/create', 'CustomerController@create');
 //Route::post('/customer', 'CustomerController@store');

@@ -19,17 +19,22 @@
                 <tbody>
                 @foreach($products as $product)
                     <tr>
-                        <td style="width:400px"><h4>{{$product->name}}</h4></td>
+                        <td style="width:400px"><h4>{{ $product->name }}</h4></td>
                         <td>
-                            <a href="{{url('product/'.$product->id)}}">
-                                <img src="{{asset('images/'.$product->imgURL)}}" alt="{{$product->name}}" class="imgbasket">
+                            <a href="{{ url('product/' . $product->id) }}">
+                                <img src="{{ asset('images/' . $product->imgURL) }}" alt="{{ $product->name }}" class="imgbasket">
                             </a>
                         </td>
-                        <td>{{$product->price/100}} €</td>
+                        <td>{{ $product->price/100 }} €</td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="btn-group" role="group">
+            <a href="{{ url('product/create') }}" class="btn btn-success">
+                <h3>ajouter un produit</h3>
+            </a>
         </div>
     </div>
 @endsection

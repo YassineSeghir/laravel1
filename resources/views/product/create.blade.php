@@ -1,9 +1,9 @@
 @extends('layout')
-@section('title', 'Produit')
+@section('title', 'Produit à ajouter')
 @section('content')
     <div class="bande">
         <div class="container">
-            <form action="result" method="POST">
+            <form action="created" method="POST">
                 <fieldset>
                     {{ csrf_field() }}
                     <legend>Add a Product to the catalog</legend>
