@@ -28,7 +28,7 @@ class ProductController extends Controller
         //         dump(Product::orderBy('name', 'desc')->orderBy('price')->get());
         //         dump(Product::all());
         //         $products = Product::all()->sortBy('price');                 //SQL equivalent to SELECT * FROM article
-        $products = Product::orderBy('price', 'asc')->get();        //SQL equivalent to SELECT * FROM article ORDER BY name DESC
+        $products = Product::orderBy('price', 'asc')->get();        //SQL equivalent to SELECT * FROM article ORDER BY name ASC
         //*******************************************************************
         return view('product/catalog', ['products' => $products]);
     }
