@@ -5,10 +5,6 @@ Route::get('/pages/cgv', 'PagesController@showCGV');
 Route::get('/pages/mentions', 'PagesController@showMentions');
 Route::get('/pages/contact', 'PagesController@showContact');
 
-//Route::get('/panier', 'BasketController@showPanier');
-
-//Route::get('/admin', 'AdminController@index');
-
 Route::get('/product/catalog', 'ProductController@index')
     ->name('catalogue');
 Route::get('/product/create', 'ProductController@create')
@@ -24,6 +20,8 @@ Route::post('/product/{id}/edited', 'ProductController@update')
 Route::get('/product/{id}/delete', 'ProductController@destroy')
     ->name('destroy');
 
+//Route::get('/panier', 'BasketController@showPanier');
+
 //Route::get('/customer', 'CustomerController@index');
 //Route::get('/customer/create', 'CustomerController@create');
 //Route::post('/customer', 'CustomerController@store');
@@ -32,11 +30,21 @@ Route::get('/product/{id}/delete', 'ProductController@destroy')
 //Route::put('/customer/{id}', 'CustomerController@update');
 //Route::delete('/customer/{id}', 'CustomerController@destroy');
 
+//
+//BackOffice***************************************************************************
+//Route::get('/admin', 'AdminController@index');
+Route::get('/admin/product/catalog', 'AdminProductController@index')
+    ->name('admin_productCatalogue');
+Route::get('/admin//product/create', 'AdminProductController@create')
+    ->name('admin_productCreate');
+Route::post('/admin/product/created', 'AdminProductController@store')
+    ->name('admin_productCreated');
+Route::get('/admin/product/{id}', 'AdminProductController@show')
+    ->name('admin_productShow');
+Route::get('/admin/product/{id}/edit', 'AdminProductController@edit')
+    ->name('admin_productEdit');
+Route::post('/admin/product/{id}/edited', 'AdminProductController@update')
+    ->name('admin_productEdited');
+Route::get('/admin/product/{id}/delete', 'AdminProductController@destroy')
+    ->name('admin_productDestroy');
 
-//Route::get('/admin/product/catalog', 'AdminProductController@index')->name('admin_catalogue');
-//Route::get('/admin//product/create', 'AdminProductController@create')->name('admin_create');
-//Route::post('/admin/product/created', 'AdminProductController@store')->name('admin_created');
-//Route::get('/admin/product/{id}', 'AdminProductController@show')->name('admin_show');
-//Route::get('/admin/product/{id}/edit', 'AdminProductController@edit')->name('admin_edit');
-//Route::post('/admin/product/{id}/edited', 'AdminProductController@update')->name('admin_edited');
-//Route::get('/admin/product/{id}/delete', 'AdminProductController@destroy')->name('admin_destroy');
