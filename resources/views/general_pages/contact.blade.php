@@ -5,28 +5,31 @@
         <div class="container">
             <h1 class="pages">Contact</h1>
             <p>Formulaire de contact</p>
-            <form class="contact" method="post" action="https://httpbin.org/post" enctype="multipart/form-data">
-                <div class="retrait">
-                    <div>
-                        <p>
-                            <input type="text" id="prenom" name="prenom" placeholder ="Bonjour, quel est votre prénom ?" class="champ" required>
-                        </p>
-                        <p>
-                            <input type="text" id="nom" name="nom" placeholder ="Pourriez-vous également me donner votre nom ?*" class="champ" required>
-                        </p>
-                        <p>
-                            <input type="tel" id="phone" name="phone" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" placeholder ="Avez-vous un téléphone ? Format: 00-00-00-00-00">
-                        </p>
-                        <p>
-                            <input type="email" id="email" name="email" class="champ" placeholder ="Ou préférez-vous être contacté par email ?">
-                        </p>
-
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Contact</h2>
+                </div>
+                <div class="panel-body">
+                    <form class="" action="/?????" method="post">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" class="form-control" name="nom" placeholder="nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Prénom</label>
+                            <input type="text" class="form-control" name="prenom" placeholder="prenom">
+                        </div>
+                        <div class="form-group">
+                            <label for="mail">Mail</label>
+                            <input type="text" class="form-control" name="mail" placeholder="mail">
+                        </div>
                         <textarea id="message" name="message" placeholder="Veuillez saisir votre message.* " rows="5" cols="5"></textarea>
                         <input type="submit" name="go" id="go"  value="Envoyez votre message" />
-                    </div>
-                </div> <!-- Fin retrait!-->
-            </form>
-
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
