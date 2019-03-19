@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 

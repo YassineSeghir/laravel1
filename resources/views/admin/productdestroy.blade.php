@@ -9,7 +9,7 @@
             <h2 class="panel-title">Supprimer produit</h2>
         </div>
         <div class="panel-body">
-            <form class="" action="{{route('yes')}}" method="post"  >
+            <form class="" action="{{route('delete')}}" method="post"  >
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="id">Id du produit</label>
