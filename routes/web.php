@@ -6,13 +6,13 @@ Route::get('/pages/mentions', 'PagesController@showMentions');
 Route::get('/pages/contact', 'PagesController@showContact');
 
 Route::get('/product/catalog', 'ProductController@index')
-    ->name('catalogue');
+    ->name('productCatalog');
 Route::get('/product/create', 'ProductController@create')
     ->name('create');
 Route::post('/product/created', 'ProductController@store')
     ->name('created');
 Route::get('/product/{id}', 'ProductController@show')
-    ->name('show');
+    ->name('productShow');
 Route::get('/product/{id}/edit', 'ProductController@edit')
     ->name('edit');
 Route::post('/product/{id}/edited', 'ProductController@update')
@@ -20,7 +20,7 @@ Route::post('/product/{id}/edited', 'ProductController@update')
 Route::get('/product/{id}/delete', 'ProductController@destroy')
     ->name('destroy');
 
-//Route::get('/panier', 'BasketController@showPanier');
+//Route::get('/panier', 'CartController@showPanier');
 
 //Route::get('/customer', 'CustomerController@index');
 //Route::get('/customer/create', 'CustomerController@create');
@@ -34,7 +34,7 @@ Route::get('/product/{id}/delete', 'ProductController@destroy')
 //BackOffice***************************************************************************
 //Route::get('/admin', 'AdminController@index');
 Route::get('/admin/product/catalog', 'AdminProductController@index')
-    ->name('admin_productCatalogue');
+    ->name('admin_productCatalog');
 Route::get('/admin//product/create', 'AdminProductController@create')
     ->name('admin_productCreate');
 Route::post('/admin/product/created', 'AdminProductController@store')

@@ -9,27 +9,9 @@ use App\Product;
 
 class ProductController extends Controller
 {
-
     public function index()
     {
-        //****************SQL queries on DB**********************************
-        //        $products = DB::select('
-        //                                SELECT a.id, a.name, a.price, i.imgURL
-        //                                FROM article AS a
-        //                                  INNER JOIN asso_article_img AS aai ON aai.id_article = a.id
-        //                                  INNER JOIN images AS i ON i.id = aai.id_image
-        //                                  ORDER BY name ASC
-        //                                ');
-        //*******************************************************************
-
-        //****************Eloquent queries************************************
-        //         $products = Product::orderBy('name', 'desc')->get();          //SQL equivalent to SELECT * FROM article ORDER BY name DESC
-        //         dump(Product::orderBy('name', 'desc'));
-        //         dump(Product::orderBy('name', 'desc')->orderBy('price')->get());
-        //         dump(Product::all());
-        //         $products = Product::all()->sortBy('price');                 //SQL equivalent to SELECT * FROM article
-        $products = Product::orderBy('price', 'asc')->get();        //SQL equivalent to SELECT * FROM article ORDER BY name DESC
-        //*******************************************************************
+        $products = Product::orderBy('price', 'asc')->get();
         return view('product/catalog', ['products' => $products]);
     }
 
@@ -50,23 +32,14 @@ class ProductController extends Controller
         $product->stock = $request->input('stock');
         $product->id_category = $request->input('id_cat');
         $product->save();
-        return redirect('/product/catalog');
+        return redirect()->route('productCatalog');
     }
 
 
     public function show($id)
     {
-//                $product = DB::select('
-//                                        SELECT a.id, a.name, a.description, a.price, i.imgURL
-//                                        FROM article AS a
-//                                          INNER JOIN asso_article_img AS aai ON aai.id_article = a.id
-//                                          INNER JOIN images AS i ON i.id = aai.id_image
-//                                        WHERE a.id = :id',
-//                                        ['id' => $id]
-//                                        );
         $product = Product::findOrFail($id);
-        return view('product', ['product' => $product]);
-
+        return view('product/product', ['product' => $product]);
     }
 
 
@@ -91,7 +64,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $product->delete();
-        return redirect('product/catalog');
+        return redirect()->route('productCatalog');
     }
 
 }

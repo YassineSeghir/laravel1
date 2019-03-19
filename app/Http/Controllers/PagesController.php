@@ -10,23 +10,23 @@ class PagesController extends Controller
     public function showCGV()
     {
 
-        return view('general_pages.cgv');
+        return view('generalPages.cgv');
     }
 
     public function showMentions()
     {
 
-        return view('general_pages.mentions');
+        return view('generalPages.mentions');
     }
 
     public function showContact()
     {
 
-        return view('general_pages.contact');
+        return view('generalPages.contact');
     }
 
     public function showHome()
     {
-        return view('homepage');
+        return view('generalPages.homepage');
     }
 }
