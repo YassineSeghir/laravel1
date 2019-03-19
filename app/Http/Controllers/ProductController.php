@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-use App\Http\Controllers\Controller;
 
-use App\Product;
 
 class ProductController extends Controller
 {
@@ -16,24 +14,50 @@ class ProductController extends Controller
     public function index()
     {
 
+        $products = app\Product::orderBy('price' , 'asc')->get();
+
+
+        return view('catalog', ["products" => $products]);
+
     }
 
-    public function show($id, Request $request)
+    public function create()
     {
-   // dd('hello');
-        $url = $request->path();
-        $article = DB::select('
-            SELECT a.id, a.name, a.description, a.price, i.imgURL
-            FROM products AS a
-              LEFT JOIN image_product AS aai ON aai.id = a.id
-              LEFT JOIN images AS i ON i.id = aai.id
-            WHERE a.id = :id',
-            ['id' => $id]
-        );
-            return view('product/product', ['article' => $article[0]]);
+
 
     }
 
+    public function store(Request $request,$id)
+    {
+        $products = $request->session()->put($id);
+
+        return $products;
+    }
+
+    public function show($id)
+    {
+        $products = app\Product::find($id);
+
+
+        return view('product', ['product' => $products]);
+    }
+
+    public function edit()
+    {
+
+    }
+
+    public function update()
+    {
+
+
+    }
+
+    public function destroy()
+    {
+
+
+    }
 
 }
 
