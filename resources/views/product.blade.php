@@ -18,7 +18,12 @@
         {{$product->price/100}} €<br>
         {{--<a class="btn btn-success btn-lg" href="{{url('admin/'.$product->id.'/produpdate')}}"role="button">Modifier produit</a>--}}
         {{--<a class="btn btn-success btn-lg" href="{{url('admin/'.$product->id.'/productdelete')}}"role="button">Suprimer produit</a>--}}
+        <br>
 
+        <form class="" action="panier" method="post">
+                {{ csrf_field() }}
+                <button type="submit" class="btn btn-success btn-lg">Ajoute panier</button>
+        </form>
 
 
 @endsection
