@@ -10,16 +10,8 @@ class SuperadminController extends Controller
     public function showAdmin()
     {
 
-        return view('Page_Admin');
+        return view('pageAdmin');
     }
-
-
-
-
-
-
-
-
 
 
 
