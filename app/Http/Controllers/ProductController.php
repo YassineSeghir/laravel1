@@ -27,10 +27,11 @@ class ProductController extends Controller
 
     }
 
-    public function store()
+    public function store(Request $request,$id)
     {
+        $products = $request->session()->put($id);
 
-
+        return $products;
     }
 
     public function show($id)
