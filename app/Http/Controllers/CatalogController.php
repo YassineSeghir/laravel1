@@ -9,11 +9,10 @@ use App\Product;
 
 class CatalogController extends Controller
 {
-
         public function showCatalog(Request $request)
     {
         $articles = Product::all();
-        // $articles = Article::all()->whereIn('id', [5,10,11]);
+       // $articles = Article::all()->whereIn('id', [5,10,11]);
         $articles = Product::all()->sortBy('name');
         //Pour afficher le catalogue dans la page front ou dans le backoffice
         $url = $request->path();
@@ -24,7 +23,6 @@ class CatalogController extends Controller
             return view('catalog', compact('articles'));
         }
     }
-
 
     public function create()
     {
