@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use App\Article;
+use App\Product;
 
 class CatalogController extends Controller
 {
 
         public function showCatalog(Request $request)
     {
-        $articles = Article::all();
+        $articles = Product::all();
         // $articles = Article::all()->whereIn('id', [5,10,11]);
-        $articles = Article::all()->sortBy('name');
+        $articles = Product::all()->sortBy('name');
         //Pour afficher le catalogue dans la page front ou dans le backoffice
         $url = $request->path();
         if ($url == 'admin/administration') {

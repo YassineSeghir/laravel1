@@ -2,6 +2,11 @@
 @section('title', 'Page Admin')
 @section('content')
     <h1>Administration du site </h1>
+    <div id="app">
+
+
+        @yield('content')
+    </div>
     <div class="container btm">
         <div class="row">
             <table class="table table-striped">
@@ -20,9 +25,9 @@
                         <td>{{$article->name}}</td>
                         <td>{{$article->description}}</td>
                         <td>{{number_format($article->price/100,2)}} €</td>
-                        <td><a href=" "><i class="fas fa-eye"></i></a></td>
-                        <td><a href="{{url('admin/edit/')}}"><i class="fas fa-edit"></i></a></td>
-                        <td><a href="{{url('admin/product/'.$article->id)}}"><i class="fas fa-trash-alt"></i></a></td>
+                        <td><a href="{{url('admin/seeProduct/'.$article->id)}}"><i class="fas fa-eye"></i></a></td>
+                        <td><a href="{{url('admin/edit/'.$article->id)}}"><i class="fas fa-edit"></i></a></td>
+                        <td><a href="{{url('admin/delete/'.$article->id)}}"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                 @endforeach
                 <tbody>

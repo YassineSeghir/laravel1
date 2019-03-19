@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('admin.layoutAdministration')
 @section('title', 'Insérer un article')
 @section('content')
 
@@ -10,7 +10,7 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-body">
-                <form class="" action="/catalog" method="post">
+                <form class="" action="" method="post">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name">Nom</label>
@@ -40,5 +40,5 @@
                 </form>
             </div>
         </div>
-   </div>
+    </div>
 @endsection

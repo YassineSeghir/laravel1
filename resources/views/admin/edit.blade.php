@@ -1,5 +1,5 @@
 @extends('admin.layoutAdministration')
-@section('title', 'Produit à supprimer ')
+@section('title', 'Produit à éditer ')
 @section('content')
     <div class="jumbotron jumbotron-fluid btm">
         <div class="container">

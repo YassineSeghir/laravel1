@@ -13,8 +13,8 @@
                 <hr>
                 <br>
                 <nav class="nav">
-                    <a class="nav-link " href="/pages/mentions">Mentions légales</a>
-                    <a class="nav-link" href="/pages/cgv">CGV</a>
+                    <a class="nav-link " href="{{route('mentions')}}">Mentions</a>
+                    <a class="nav-link" href="{{route('cgv')}}">CGV</a>
                 </nav>
             </div>
         </div>

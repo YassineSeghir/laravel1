@@ -8,7 +8,7 @@
     </div>
     <div class="container btm">
         <div class="row">
-            <form action="{{url('/admin/product/' . $article->id)}}" method="post">
+            <form action="{{url('/admin/delete/' . $article->id)}}" method="post">
                 <div class="col-8">
                     <h3>{{$article->name}}</h3>
                     <img src="{{asset('../images/'.$article->imgURL)}}" alt="{{$article->name}}">

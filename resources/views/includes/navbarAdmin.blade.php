@@ -6,21 +6,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav justify-content-end">
-
             <li class="nav-item active">
-                <a class="nav-link" href="../admin/administration">Catalogue</a>
+                <a class="nav-link" href="{{route('back')}}">Catalogue</a>
+            </li> 
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('create')}}">Ajouter un produit </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../admin/edit">Editer</a>
+                <a class="nav-link" href="#">Gérer catégories</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../product/create">Ajouter un produit </a>
+                <a class="nav-link" href="#">Voir user</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../product/create">Voir user</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/pages/contact">Ajouter user</a>
+                <a class="nav-link" href="#">Ajouter user</a>
             </li>
         </ul>
     </div>

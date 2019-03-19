@@ -10,9 +10,13 @@
         </div>
     </div>
     <div class="bande">
-        <div class="container">
-            <h2>Bienvenue</h2>
-            <h3>Les confitures bon papa ....</h3>
+        <div class="container home">
+          <h2>Bienvenue</h2>
+          <h3>Les confitures bon papa ....</h3>
+        </div>
+    </div>
+        <div class="bande">
+        <div class="container home">
             <p><br>Il Fallait OSER, avoir de la TENACITE, du COURAGE, ne pas ménager son temps, son énergie afin de faire
                 connaître nos produits :
                 <ul>
