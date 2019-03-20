@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App;
+use App\Product;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 
 class BasketController extends Controller
@@ -12,18 +11,32 @@ class BasketController extends Controller
     public function showPanier(Request $request)
     {
 
-        $products = $request->session()->get('key', []);
+        $data = $request->session()->get('key');
 
-        return view('basket', ['product' => $products]);
+        return view('panier',['data'=>$data]);
     }
 
-    public function addPanier(Request $request , $id)
-    {
+    public function addPanier(Request $request)
+{
 
-        $panier= Product::find($id);
-        $request->session()->put('key.'.$id, $panier );
+    $product = Product::find($request['id']);
+//    dd($product);
+    $request->session()->put('key.'.$product->id, $product );
 
-        return redirect(route('basketAdd'));
-    }
+    $data = $request->session()->get('key');
+
+    return view('panier',['data'=>$data]);
+}
 }
 
+
+
+// public function addPanier(Request $request,$id)
+//    {
+//        dd($request);
+//        $product= Product::find($id);
+//
+//        $request->session()->put('key.'.$id, $product );
+//
+//        return redirect(route('basketAdd'));
+//    }

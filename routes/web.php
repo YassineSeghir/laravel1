@@ -20,7 +20,7 @@ Route::get('/product/{id}', 'ProductController@show')
 
 Route::get('panier', 'BasketController@showPanier')
     ->name('basket');
-Route::post('panier', 'BasketController@addPanier')
+Route::put('panier', 'BasketController@addPanier')
     ->name('basketAdd');
 
 //Route::get('/customer', 'CustomerController@index');
