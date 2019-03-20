@@ -20,10 +20,10 @@
             <p>valeur : <b>{{ $product['stock'] }}</b></p>
 
             <h3>Categorie</h3>
-            <p>valeur : <b>{{ $product['id_cat'] }}</b></p>
+            <p>valeur : <b>{{ $product['id_category'] }}</b></p>
 
             <h3>Categorie</h3>
-            <p>valeur : <b>{{ $product['image_id'] }}</b></p>
+            <p>valeur : <b>{{ $product['id_image'] }}</b></p>
         </div>
     </div>
 

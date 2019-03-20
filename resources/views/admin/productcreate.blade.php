@@ -29,12 +29,12 @@
                     <input type="text" class="form-control" name="stock" placeholder="Stock">
                 </div>
                 <div class="form-group">
-                    <label for="id_cat">Categorie</label>
-                    <input type="text" class="form-control" name="id_cat" placeholder="Categorie">
+                    <label for="id_category">Categorie</label>
+                    <input type="text" class="form-control" name="id_category" placeholder="Categorie">
                 </div>
                 <div class="form-group">
-                    <label for="image_id">Image_id</label>
-                    <input type="text" class="form-control" name="image_id" placeholder="image_id">
+                    <label for="id_image">Image_id</label>
+                    <input type="text" class="form-control" name="id_image" placeholder="image_id">
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
 
