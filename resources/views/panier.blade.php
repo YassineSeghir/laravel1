@@ -8,8 +8,6 @@
             border-radius: 5px;
             border: solid 1px #000;
         }
-
-
     </style>
 {{--@dump($data)--}}
     @foreach($data as $product)
