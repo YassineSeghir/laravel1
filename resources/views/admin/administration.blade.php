@@ -3,8 +3,6 @@
 @section('content')
     <h1>Administration du site </h1>
     <div id="app">
-
-
         @yield('content')
     </div>
     <div class="container btm">
@@ -20,14 +18,14 @@
                     <th scope="col">Supprimer</th>
                 </tr>
                 </thead>
-                @foreach($articles as $article)
+                @foreach($products as $product)
                     <tr>
-                        <td>{{$article->name}}</td>
-                        <td>{{$article->description}}</td>
-                        <td>{{number_format($article->price/100,2)}} €</td>
-                        <td><a href="{{url('admin/seeProduct/'.$article->id)}}"><i class="fas fa-eye"></i></a></td>
-                        <td><a href="{{url('admin/edit/'.$article->id)}}"><i class="fas fa-edit"></i></a></td>
-                        <td><a href="{{url('admin/delete/'.$article->id)}}"><i class="fas fa-trash-alt"></i></a></td>
+                        <td>{{$product->name}}</td>
+                        <td>{{$product->description}}</td>
+                        <td>{{number_format($product->price/100,2)}} €</td>
+                        <td><a href="{{url('admin/seeProduct/'.$product->id)}}"><i class="fas fa-eye"></i></a></td>
+                        <td><a href="{{url('admin/edit/'.$product->id)}}"><i class="fas fa-edit"></i></a></td>
+                        <td><a href="{{url('admin/delete/'.$product->id)}}"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                 @endforeach
                 <tbody>

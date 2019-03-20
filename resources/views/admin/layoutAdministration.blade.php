@@ -14,6 +14,7 @@
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
           crossorigin="anonymous">
 </head>
+
 <body>
 <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
@@ -22,7 +23,6 @@
                 <a href="{{ url('welcome') }}">welcome</a>
             @else
                 <a href="{{ route('login') }}">Login</a>
-
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}">Register</a>
                 @endif
@@ -40,4 +40,5 @@
     @include('includes.footer')
 </footer>
 </body>
+
 </html>
