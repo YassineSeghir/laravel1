@@ -33,8 +33,7 @@ Route::post('panier', 'BasketController@addPanier')
 
 
 //*********************************************************************************************************************
-//********BACKOFFICE***************************************************************************************************
-//*********************************************************************************************************************
+//*********BACKOFFICE***************************************************************************************************
 
 Route::get('admin/login', 'SuperadminController@index')
     ->name('admin');
@@ -49,12 +48,12 @@ Route::get('admin/login', 'SuperadminController@index')
 //Route::post('admin/productdelete', 'SuperadminController@delete')
 //    ->name('delete');
 
-
+//*********Admin Product Controller************************************************************************************
 Route::get('/admin/catalog', 'AdminProductController@index')
     ->name('admin_catalog');
 Route::get('/admin/product/create', 'AdminProductController@create')
     ->name('admin_productCreate');
-Route::post('/admin/product/create', 'AdminProductController@store')
+Route::post('/admin/product/created', 'AdminProductController@store')
     ->name('admin_productCreated');
 Route::get('/admin/product/{id}', 'AdminProductController@show')
     ->name('admin_productShow');
