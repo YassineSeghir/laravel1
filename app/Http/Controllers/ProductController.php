@@ -31,8 +31,8 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $products = app\Product::find($id);
-        return view('product', ['product' => $products]);
+        $product = app\Product::find($id);
+        return view('product', ['product' => $product]);
     }
 
 

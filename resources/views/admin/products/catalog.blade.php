@@ -1,4 +1,4 @@
-@extends('admin.layoutAdministration')
+@extends('admin.layoutAdmin')
 @section('title', 'Page Admin')
 @section('content')
     <h1>Administration du site </h1>
@@ -20,12 +20,12 @@
                 </thead>
                 @foreach($products as $product)
                     <tr>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->description}}</td>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->description }}</td>
                         <td>{{number_format($product->price/100,2)}} €</td>
-                        <td><a href="{{url('admin/seeProduct/'.$product->id)}}"><i class="fas fa-eye"></i></a></td>
-                        <td><a href="{{url('admin/edit/'.$product->id)}}"><i class="fas fa-edit"></i></a></td>
-                        <td><a href="{{url('admin/delete/'.$product->id)}}"><i class="fas fa-trash-alt"></i></a></td>
+                        <td><a href="{{ url('admin/product/' . $product->id) }}"><i class="fas fa-eye"></i></a></td>
+                        <td><a href="{{ url('admin/product/' . $product->id) . '/edit' }}"><i class="fas fa-edit"></i></a></td>
+                        <td><a href="{{ url('admin/product/' . $product->id) . '/delete' }}"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                 @endforeach
                 <tbody>

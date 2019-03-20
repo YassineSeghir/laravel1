@@ -1,8 +1,6 @@
 @extends('admin.layoutAdmin')
 @section('title','Admin')
 @section('container')
-
-
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title">Mise a jour produit</h2>
