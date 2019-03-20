@@ -31,12 +31,3 @@ class BasketController extends Controller
 
 
 
-// public function addPanier(Request $request,$id)
-//    {
-//        dd($request);
-//        $product= Product::find($id);
-//
-//        $request->session()->put('key.'.$id, $product );
-//
-//        return redirect(route('basketAdd'));
-//    }
