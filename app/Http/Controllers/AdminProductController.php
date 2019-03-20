@@ -44,13 +44,11 @@ class AdminProductController extends Controller
     }
 
 
-
     public function edit($id)
     {
         $product = Product::findOrFail($id);
         return view('admin.products.edit', ['product' => $product]);
     }
-
 
 
     public function update(Request $request, $id)
@@ -61,11 +59,10 @@ class AdminProductController extends Controller
         $product->weight = $request->input('weight');
         $product->stock = $request->input('stock');
         $product->id_category = $request->input('id_category');
-        $product->id_image = $request->input('id_image');
+//        $product->id_image = $request->input('id_image');
         $product->save();
-        return view('admin.resultupdate', ['product' => $product]);
+        return view('admin.products.edited', ['product' => $product]);
     }
-
 
 
     public function destroy($id)
