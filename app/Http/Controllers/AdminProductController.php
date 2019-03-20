@@ -54,13 +54,12 @@ class AdminProductController extends Controller
     public function update(Request $request, $id)
     {
         $product = Product::findOrFail($id);
-        dd($product);
         $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->weight = $request->input('weight');
         $product->stock = $request->input('stock');
-//        $product->id_category = $request->input('id_category');
-//        $product->id_image = $request->input('id_image');
+        $product->id_category = $request->input('id_category');
+        $product->id_image = $request->input('id_image');
         $product->save();
         return view('admin.products.edited', ['product' => $product]);
     }
