@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'article';
+    protected $table = 'products';
+    public $timestamps = false;
 
     public function image()
     {
         return $this->belongsTo('App\Image');
     }
-
-
 }
 
 
