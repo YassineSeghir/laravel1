@@ -9,12 +9,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class BasketController extends Controller
 {
-    public function showPanier(Request $request,$id)
+    public function showPanier(Request $request)
     {
-        $products = $request->session()->get($id);
 
+        $products = $request->session()->get('key', []);
 
-        return view('panier', $products);
+        return view('basket', ['product' => $products]);
+    }
+
+    public function addPanier(Request $request , $id)
+    {
+
+        $panier= Product::find($id);
+        $request->session()->put('key.'.$id, $panier );
+
+        return redirect(route('basketAdd'));
     }
 }
 

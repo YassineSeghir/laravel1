@@ -23,7 +23,7 @@
         <br>
 
     @endforeach
-    {{--<a class="btn btn-success btn-lg" href="{{url('admin/productcreate')}}"role="button">Ajouter produit</a><br>--}}
+
 @endsection
 
 

@@ -6,7 +6,8 @@ Route::get('/pages/contact', 'PagesController@showContact');
 Route::get('/', 'PagesController@showHome')->name('contact');
 
 
-Route::get('panier', 'BasketController@showPanier')->name('basket');
+Route::get('/panier', 'BasketController@showPanier')->name('basket');
+Route::put('/panier', 'BasketController@addPanier')->name('basketAdd');
 
 Route::get('admin/login', 'SuperadminController@index')->name('admin');
 Route::get('/admin/administration', 'CatalogController@showCatalog')->name('back');

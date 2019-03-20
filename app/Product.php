@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'article';
+    protected $table = 'products';
 
     public function image()
     {
-        return $this->belongsTo('App\Image');
+        return $this->belongsTo('App\Image','id_image');
     }
 
 
