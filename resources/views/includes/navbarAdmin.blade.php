@@ -9,19 +9,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav justify-content-end">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('admin_catalog') }}">Catalogue</a>
+                <a class="nav-link" href="{{ route('admin_catalog') }}">Liste Produits</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('admin_productCreate') }}">Ajouter un produit </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Gérer catégories</a>
+                <a class="nav-link" href="#">Catégories Produits</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Voir user</a>
+                <a class="nav-link" href="#">Liste Clients</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Ajouter user</a>
+                <a class="nav-link" href="#">Ajouter Client</a>
             </li>
         </ul>
     </div>

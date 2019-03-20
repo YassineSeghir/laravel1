@@ -33,33 +33,33 @@ Route::put('panier', 'BasketController@addPanier')
 
 
 //*********************************************************************************************************************
-//********BACKOFFICE***************************************************************************************************
-//*********************************************************************************************************************
+//*********BACKOFFICE***************************************************************************************************
 
 Route::get('admin/login', 'SuperadminController@index')
     ->name('admin');
-Route::get('admin/productcreate', 'SuperadminController@create')
-    ->name('create');
-Route::post('admin/result', 'SuperadminController@store');
-Route::get('admin/{id}/produpdate', 'SuperadminController@edit');
-Route::post('admin/{id}/resultupdate', 'SuperadminController@update');
-Route::get('admin/productdestroy', 'SuperadminController@destroy')
-    ->name('destroy');
-Route::post('admin/productdelete', 'SuperadminController@delete')
-    ->name('delete');
 
+//Route::get('admin/productcreate', 'SuperadminController@create')
+//    ->name('create');
+//Route::post('admin/result', 'SuperadminController@store');
+//Route::get('admin/{id}/produpdate', 'SuperadminController@edit');
+//Route::post('admin/{id}/resultupdate', 'SuperadminController@update');
+//Route::get('admin/productdestroy', 'SuperadminController@destroy')
+//    ->name('destroy');
+//Route::post('admin/productdelete', 'SuperadminController@delete')
+//    ->name('delete');
 
-Route::get('/admin/administration', 'AdminProductController@index')
+//*********Admin Product Controller************************************************************************************
+Route::get('/admin/catalog', 'AdminProductController@index')
     ->name('admin_catalog');
 Route::get('/admin/product/create', 'AdminProductController@create')
     ->name('admin_productCreate');
-//Route::post('/admin/product/created', 'AdminProductController@store')
-//    ->name('admin_productCreated');
-//Route::get('/admin/product/{id}', 'AdminProductController@show')
-//    ->name('admin_productShow');
-//Route::get('/admin/product/{id}/edit', 'AdminProductController@edit')
-//    ->name('admin_productEdit');
-//Route::post('/admin/product/{id}/edited', 'AdminProductController@update')
-//    ->name('admin_productEdited');
-//Route::get('/admin/product/{id}/delete', 'AdminProductController@destroy')
-//    ->name('admin_productDestroy');
+Route::post('/admin/product/created', 'AdminProductController@store')
+    ->name('admin_productCreated');
+Route::get('/admin/product/{id}', 'AdminProductController@show')
+    ->name('admin_productShow');
+Route::get('/admin/product/{id}/edit', 'AdminProductController@edit')
+    ->name('admin_productEdit');
+Route::post('/admin/product/{id}/edited', 'AdminProductController@update')
+    ->name('admin_productEdited');
+Route::get('/admin/product/{id}/delete', 'AdminProductController@destroy')
+    ->name('admin_productDestroy');

@@ -1,25 +1,28 @@
-@extends('admin.layoutAdministration')
-@section('title', 'Produit à supprimer ')
-@section('content')
-    <div class="jumbotron jumbotron-fluid btm">
-        <div class="container">
-            <h1 class="display-4">Supprimer : {{$article->name}}</h1>
+@extends('admin.layoutAdmin')
+@section('title','Admin')
+@section('container')
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Supprimer produit</h2>
         </div>
-    </div>
-    <div class="container btm">
-        <div class="row">
-            <form action="{{url('/admin/delete/' . $article->id)}}" method="post">
-                <div class="col-8">
-                    <h3>{{$article->name}}</h3>
-                    <img src="{{asset('../images/'.$article->imgURL)}}" alt="{{$article->name}}">
+        <div class="panel-body">
+            <form class="" action="{{route('delete')}}" method="post"  >
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="id">Id du produit</label>
+                    <input type="text" class="form-control" name="id" placeholder="Id du produit">
                 </div>
-                <div class="col-4"><p>{{$article->description}}</p>
-                    <p>{{number_format($article->price/100,2)}} €</p>
-                    <input type="submit" name=ok" value="Etes-vous certain de vouloir supprimer cet article ?">
-                    <input type="hidden" name="_method" value="delete"/>
-                    {{ csrf_field() }}
-                </div>
+
+
+
+                <button type="submit" class="btn btn-primary">Delete</button>
             </form>
         </div>
     </div>
+
+
+
 @endsection

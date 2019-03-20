@@ -1,40 +1,40 @@
-@extends('admin.layoutAdministration')
+@extends('admin.layoutAdmin')
 @section('title', 'Insérer un article')
 @section('content')
-
     <div class="jumbotron jumbotron-fluid btm">
         <div class="container">
-            <h1 class="display-4">Insérer un article</h1>
+            <h4 class="display-4">Insérer un article</h4>
         </div>
     </div>
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-body">
-                <form class="" action="" method="post">
+                <form class="" action="created" method="post">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name">Nom</label>
-                        <input type="text" class="form-control" name="name" placeholder="name">
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Nom">
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+                        <textarea name="description" class="form-control" id="description" rows="3">une briève description
+                        </textarea>
                     </div>
                     <div class="form-group">
                         <label for="price">Prix</label>
-                        <input type="text" class="form-control" name="price" placeholder="Prix">
+                        <input name="price" type="text" class="form-control" id="price" placeholder="Prix">
                     </div>
                     <div class="form-group">
                         <label for="weight">Poids</label>
-                        <input type="text" class="form-control" name="weight" placeholder="Poids">
+                        <input name="weight" type="text" class="form-control" id="weight" placeholder="Poids">
                     </div>
                     <div class="form-group">
                         <label for="stock">Stock</label>
-                        <input type="text" class="form-control" name="stock" placeholder="Stock">
+                        <input name="stock" type="text" class="form-control" id="stock" placeholder="Stock">
                     </div>
                     <div class="form-group">
                         <label for="cat">Catégorie</label>
-                        <input type="text" class="form-control" name="cat" placeholder="cat">
+                        <input name="id_category" type="text" class="form-control" id="category" placeholder="Catégorie">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
