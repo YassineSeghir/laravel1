@@ -9,10 +9,11 @@
                         {{ csrf_field() }}
                         <div class="col-8">
                             <h3>{{$product->name}}</h3>
-                            <img src="{{ asset('images/' . $product->imgURL) }}" alt="{{ $product->name }}">
+                            <h3>{{ number_format($product->price/100,2) }} €</h3>
+                            <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}">
                         </div>
-                        <div class="col-4"><p>{{ $product->description }}</p>
-                            <p>{{ number_format($product->price/100,2) }} €</p>
+                        <div class="col-4">
+                            <p>{{ $product->description }}</p>
                         </div>
                     </form>
                 </div>
