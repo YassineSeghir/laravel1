@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 
-class ProductController extends Controller
+class OrderController extends Controller
 {
     public function index()
     {
-        $products = app\Product::orderBy('price', 'asc')->get();
-        return view('products.catalog', ["products" => $products]);
+        $orders = app\Order::orderBy('id', 'asc')->get();
+        return view('admin/orderList', ["order" => $orders]);
     }
 
 
@@ -24,13 +24,13 @@ class ProductController extends Controller
 
     public function store()
     {
+
     }
 
 
-    public function show($id)
+    public function show()
     {
-        $product = app\Product::find($id);
-        return view('products.product', ['product' => $product]);
+
     }
 
 
@@ -48,5 +48,3 @@ class ProductController extends Controller
     {
     }
 }
-
-

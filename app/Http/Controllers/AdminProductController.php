@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use App\Product;
 
-class SuperadminController extends Controller
+class AdminProductController extends Controller
 {
     public function index()
     {
-        return view('admin/Page_Admin');
+        $products = Product::orderBy('price', 'asc')->get();
+        return view('admin.products.catalog', ['products' => $products]);
     }
 
 
     public function create()
     {
-        return view('admin.productcreate');
+        return view('admin.products.create');
     }
 
 
@@ -31,26 +33,27 @@ class SuperadminController extends Controller
         $product->id_category = $request->input('id_category');
         $product->id_image = $request->input('id_image');
         $product->save();
-
-        return view('admin.result', ['product' => $product]);
+        return redirect()->route('admin_catalog');
     }
 
 
-    public function show()
+    public function show($id)
     {
+        $product = Product::findOrFail($id);
+        return view('admin.products.product', ['product' => $product]);
     }
 
 
     public function edit($id)
     {
-        $product = Product::find($id);
-        return view('admin.produpdate', ['product' => $product]);
+        $product = Product::findOrFail($id);
+        return view('admin.products.edit', ['product' => $product]);
     }
 
 
     public function update(Request $request, $id)
     {
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->weight = $request->input('weight');
@@ -58,23 +61,14 @@ class SuperadminController extends Controller
         $product->id_category = $request->input('id_category');
         $product->id_image = $request->input('id_image');
         $product->save();
-        return view('admin.resultupdate', ['product' => $product]);
+        return view('admin.products.edited', ['product' => $product]);
     }
 
 
-    public function destroy()
+    public function destroy($id)
     {
-        return view('admin.productdestroy');
-    }
-
-
-    public function delete(Request $request)
-    {
-        $product = Product::find($request->id);
+        $product = Product::findOrFail($id);
         $product->delete();
-        return view('admin.productdestroy');
+        return redirect()->route('admin_catalog');
     }
 }
-
-
-

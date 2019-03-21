@@ -2,19 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App;
+use App\Product;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 
 class BasketController extends Controller
 {
-    public function showPanier(Request $request,$id)
+    public function showPanier(Request $request)
     {
-        $products = $request->session()->get($id);
 
+        $data = $request->session()->get('key');
 
-        return view('panier', $products);
+        return view('panier',['data'=>$data]);
     }
+
+    public function addPanier(Request $request)
+{
+
+    $product = Product::find($request['id']);
+//    dd($product);
+    $request->session()->put('key.'.$product->id, $product );
+
+    $data = $request->session()->get('key');
+
+    return view('panier',['data'=>$data]);
 }
+}
+
+
 

@@ -6,11 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'article';
+    protected $table = 'products';
+    public $timestamps = false;
 
     public function image()
     {
-        return $this->belongsTo('App\Image');
+        return $this->belongsTo('App\Image', 'id_image');
+    }
+
+
+    public function order()
+    {
+        return $this->belongsToMany('App\Order','order_product','id_order','id_product')->withPivot('qty');
     }
 
 
