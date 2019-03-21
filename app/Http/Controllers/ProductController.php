@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = app\Product::orderBy('price', 'asc')->get();
-        return view('catalog', ["products" => $products]);
+        return view('products.catalog', ["products" => $products]);
     }
 
 
@@ -24,7 +24,6 @@ class ProductController extends Controller
 
     public function store()
     {
-
     }
 
 
