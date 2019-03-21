@@ -17,16 +17,17 @@ class BasketController extends Controller
     }
 
     public function addPanier(Request $request)
-{
+    {
 
     $product = Product::find($request['id']);
-//    dd($product);
+
     $request->session()->put('key.'.$product->id, $product );
 
     $data = $request->session()->get('key');
 
     return view('panier',['data'=>$data]);
-}
+    }
+
 }
 
 

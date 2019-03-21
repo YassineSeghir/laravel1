@@ -4,10 +4,10 @@
 
     @foreach ($order as $orders)
         {{--@dd($order[0])--}}
-       <h4>{{$orders->id}}</h4> <br>
+       <h4>Commande Id n°{{$orders->id}}</h4><br>
         @foreach($orders->product as $product)
-        {{$product->name." ".$product->pivot->qty}} <br>
-        {{--{{$product->pivot->qty}}--}}
+        {{$product->name." ".".Quantite commander "." ".$product->pivot->qty}}<br>
+
         <br>
         @endforeach
 
