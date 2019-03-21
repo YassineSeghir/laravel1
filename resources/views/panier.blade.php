@@ -9,13 +9,19 @@
             border: solid 1px #000;
         }
     </style>
-{{--@dump($data)--}}
-    @foreach($data as $product)
+    @if($data)
 
-    {{$product->name}}<br>
-    <img src="{{asset($product->image->imgURL)}}"><br>
-    {{$product->price/100}} €<br>
-        <br>
-    @endforeach
+       @foreach($data as $product)
+
+          {{$product->name}}<br>
+          <img src="{{asset($product->image->imgURL)}}"><br>
+          {{$product->price/100}} €<br>
+          <br>
+        @endforeach
+
+    @else
+        <h3>{{'Panier vide'}}</h3>
+
+    @endif
 
 @endsection
