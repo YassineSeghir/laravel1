@@ -14,13 +14,11 @@ class Product extends Model
         return $this->belongsTo('App\Image', 'id_image');
     }
 
-
     public function order()
     {
-        return $this->belongsToMany('App\Order','order_product','id_order','id_product')->withPivot('qty');
+        return $this->belongsToMany('App\Order', 'order_product', 'id_order', 'id_product')
+            ->withPivot('qty');
     }
-
-
 }
 
 

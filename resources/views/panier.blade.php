@@ -1,27 +1,14 @@
 @extends('layout')
 @section('title', 'Panier')
 @section('content')
-    <style>
-        img {
-            height: 110px;
-            min-width: 90px;
-            border-radius: 5px;
-            border: solid 1px #000;
-        }
-    </style>
     @if($data)
-
-       @foreach($data as $product)
-
-          {{$product->name}}<br>
-          <img src="{{asset($product->image->imgURL)}}"><br>
-          {{$product->price/100}} €<br>
-          <br>
+        @foreach($data as $product)
+            {{ $product->name }}<br>
+            <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}" height="100">
+            {{ number_format($product->price/100,2) }} €<br>
+            <br>
         @endforeach
-
     @else
-        <h3>{{'Panier vide'}}</h3>
-
+        <h3>Panier vide</h3>
     @endif
-
 @endsection

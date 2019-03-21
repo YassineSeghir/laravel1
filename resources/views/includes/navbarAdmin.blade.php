@@ -18,10 +18,10 @@
                 <a class="nav-link" href="#">Catégories Produits</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Liste Clients</a>
+                <a class="nav-link" href="{{ route('admin_customerList') }}">Liste Clients</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('list') }}">Liste Commande</a>
+                <a class="nav-link" href="{{ route('list') }}">Liste Commandes</a>
             </li>
         </ul>
     </div>

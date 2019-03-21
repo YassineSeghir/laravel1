@@ -7,9 +7,11 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th scope="col">ID</th>
                     <th scope="col">Titre</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Prix unitaire HT</th>
+                    <th scope="col">Prix unitaire</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Voir</th>
                     <th scope="col">Editer</th>
                     <th scope="col">Supprimer</th>
@@ -17,24 +19,30 @@
                 </thead>
                 @foreach($products as $product)
                     <tr>
+                        <td>{{ $product->id }}</td>
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->description }}</td>
-                        <td>{{number_format($product->price/100,2)}} €</td>
+                        <td>{{ number_format($product->price/100,2) }} €</td>
                         <td>
-                            <a href="{{ url('admin/product/' . $product->id) }}"><i class="fas fa-eye"></i></a>
+                            <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}" height="33">
                         </td>
                         <td>
-                            <a href="{{ url('admin/product/' . $product->id) . '/edit' }}"><i
-                                        class="fas fa-edit"></i></a>
+                            <a href="{{ url('admin/product/' . $product->id) }}">
+                                <i class="fas fa-eye"></i>
+                            </a>
                         </td>
                         <td>
-                            <a href="{{ url('admin/product/' . $product->id) . '/delete' }}"><i
-                                        class="fas fa-trash-alt"></i></a>
+                            <a href="{{ url('admin/product/' . $product->id) . '/edit' }}">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ url('admin/product/' . $product->id) . '/delete' }}">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
-                <tbody>
-                </tbody>
             </table>
         </div>
     </div>
