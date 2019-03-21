@@ -37,6 +37,8 @@ Route::put('panier', 'BasketController@addPanier')
 
 Route::get('admin/login', 'SuperadminController@index')
     ->name('admin');
+Route::get('admin/orderList', 'OrderController@index')
+    ->name('list');
 
 //Route::get('admin/productcreate', 'SuperadminController@create')
 //    ->name('create');

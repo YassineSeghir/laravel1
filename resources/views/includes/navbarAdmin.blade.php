@@ -21,7 +21,7 @@
                 <a class="nav-link" href="#">Liste Clients</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Ajouter Client</a>
+                <a class="nav-link" href="{{ route('list') }}">Liste Commande</a>
             </li>
         </ul>
     </div>
