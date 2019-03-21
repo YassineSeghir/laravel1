@@ -17,7 +17,7 @@
                 <h1>Catalogue</h1>
                 @foreach ($products as $product)
                     <h3>{{ $product->name }}</h3>
-                    <h3>{{ $product->price/100 }} €</h3>
+                    <h3>{{number_format($product->price/100,2)}} €</h3>
                     <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }} height=" 100px">
                     <br/>
                     <p>{{$product->description}}</p>
