@@ -19,12 +19,12 @@
 
         <br>
 
-        <form action="{{route('basket')}}" method="post">
+        <form action="{{ route('basket') }}" method="post">
                 @method ('PUT')
                 @csrf
 
-                <input type="hidden" value="{{$product->id}}" name="id">
-                <button type="submit" class="btn btn-success btn-lg">Ajoute panier</button>
+                <input name="id" type="hidden" value="{{ $product->id }}">
+                <button type="submit" class="btn btn-success btn-lg">Ajouter au panier</button>
         </form>
 
 

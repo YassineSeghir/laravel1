@@ -10,7 +10,7 @@
                     </div>
                     <div class="panel-body">
                         <form class="" action="edited" method="post">
-                            {{ csrf_field() }}
+                            @csrf
                             <div class="form-group">
                                 <label for="name">Nom du produit</label>
                                 <input type="text" class="form-control" name="name" placeholder="Nom du produit"
