@@ -20,11 +20,17 @@
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->description }}</td>
                         <td>{{number_format($product->price/100,2)}} €</td>
-                        <td><a href="{{ url('admin/product/' . $product->id) }}"><i class="fas fa-eye"></i></a></td>
-                        <td><a href="{{ url('admin/product/' . $product->id) . '/edit' }}"><i
-                                        class="fas fa-edit"></i></a></td>
-                        <td><a href="{{ url('admin/product/' . $product->id) . '/delete' }}"><i
-                                        class="fas fa-trash-alt"></i></a></td>
+                        <td>
+                            <a href="{{ url('admin/product/' . $product->id) }}"><i class="fas fa-eye"></i></a>
+                        </td>
+                        <td>
+                            <a href="{{ url('admin/product/' . $product->id) . '/edit' }}"><i
+                                        class="fas fa-edit"></i></a>
+                        </td>
+                        <td>
+                            <a href="{{ url('admin/product/' . $product->id) . '/delete' }}"><i
+                                        class="fas fa-trash-alt"></i></a>
+                        </td>
                     </tr>
                 @endforeach
                 <tbody>

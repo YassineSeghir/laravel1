@@ -69,6 +69,6 @@ class AdminProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $product->delete();
-        return redirect('product.catalog');
+        return redirect()->route('admin_catalog');
     }
 }

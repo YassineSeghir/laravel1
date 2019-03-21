@@ -1,5 +1,6 @@
 <?php
 
+//*********Pages controller********************************************************************************************
 Route::get('/', 'PagesController@showHome')
     ->name('home');
 Route::get('/pages/cgv', 'PagesController@showCGV'
@@ -7,22 +8,24 @@ Route::get('/pages/cgv', 'PagesController@showCGV'
 Route::get('/pages/mentions', 'PagesController@showMentions')
     ->name('mentions');
 Route::get('/pages/contact', 'PagesController@showContact')
-    ->name('home');
+    ->name('contact');
 
 
+//*********Product Controller******************************************************************************************
 Route::get('/catalog', 'ProductController@index')
     ->name('catalog');
-Route::post('/product', 'ProductController@store')
-    ->name('basketStore');
 Route::get('/product/{id}', 'ProductController@show')
-    ->name('prod');
+    ->name('product');
 
 
+//*********Basket Controller*******************************************************************************************
 Route::get('panier', 'BasketController@showPanier')
     ->name('basket');
 Route::put('panier', 'BasketController@addPanier')
     ->name('basketAdd');
 
+
+//*********Customer Controller*****************************************************************************************
 //Route::get('/customer', 'CustomerController@index');
 //Route::get('/customer/create', 'CustomerController@create');
 //Route::post('/customer', 'CustomerController@store');
@@ -33,7 +36,7 @@ Route::put('panier', 'BasketController@addPanier')
 
 
 //*********************************************************************************************************************
-//*********BACKOFFICE***************************************************************************************************
+//*********BACKOFFICE**************************************************************************************************
 
 Route::get('admin/login', 'SuperadminController@index')
     ->name('admin');
