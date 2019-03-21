@@ -26,11 +26,11 @@
                     </div>
                     <div class="form-group">
                         <label for="weight">Poids</label>
-                        <input name="weight" type="number" min="1" max="100" class="form-control" id="weight" placeholder="Poids" required>
+                        <input name="weight" type="number" min="100" max="3000" class="form-control" id="weight" placeholder="Poids" required>
                     </div>
                     <div class="form-group">
                         <label for="stock">Stock</label>
-                        <input name="stock" type="number" min="100" max="100000" class="form-control" id="stock" placeholder="Stock"required>
+                        <input name="stock" type="number" min="1" max="100000" class="form-control" id="stock" placeholder="Stock"required>
                     </div>
                     <div class="form-group">
                         <label for="cat">Catégorie</label>
