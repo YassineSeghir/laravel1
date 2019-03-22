@@ -41,11 +41,12 @@ class BasketController extends Controller
     }
 
 
-    public function destroyPanier($id,Request $request)
+    public function destroyPanier(Request $request)
     {
-        $request->session()->forget($id);
-        
-        return redirect()->route('basketSupp');
+
+        $request->session()->forget('key', $request->id);
+
+        return redirect()->route('basketSupp' );
     }
 }
 

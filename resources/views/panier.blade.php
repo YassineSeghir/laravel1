@@ -9,8 +9,8 @@
                     <th scope="col">Nom</th>
                     <th scope="col">Description</th>
                     <th scope="col">Prix unitaire HT</th>
-                    <th scope="col">Quantité</th>
                     <th scope="col">Total</th>
+                    <th scope="col">Quantité</th>
                     <th scope="col">Supprimer</th>
                 </tr>
                 </thead>
@@ -26,7 +26,9 @@
                             <th>
                             <form action="{{ route('basketSupp') }}" method="post">
                                 {{csrf_field()}}
+                                <input name="id" type="hidden" value="{{ $product->id }}">
                                 <td><button type="submit" class="btn btn-danger">Supprimer</button></td>
+
                             </form>
                             </th>
 
