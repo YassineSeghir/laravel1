@@ -1,17 +1,17 @@
 @extends('admin.layoutAdmin')
 @section('title', 'Order Admin')
 @section('content')
-
-    @foreach ($order as $orders)
-        {{--@dd($order[0])--}}
-       <h4>Commande Id n°{{$orders->id}}</h4><br>
-        @foreach($orders->product as $product)
-        {{$product->name." ".".Quantite commander "." ".$product->pivot->qty}}<br>
-
-        <br>
-        @endforeach
-
-
-    @endforeach
-
+    <div class="jumbotron jumbotron-fluid btm">
+        <div class="container">
+            <div class="container btm">
+                @foreach ($order as $orders)
+                    <h2>{{ 'Commande: ' . $orders->id }}</h2>
+                    <h4>{{ 'passée le ' . $orders->date . ', par: ' . $orders->id_customer }}</h4>
+                    @foreach($orders->product as $product)
+                        <p>{{ $product->pivot->qty ." ". $product->name }}</p>
+                    @endforeach
+                @endforeach
+            </div>
+        </div>
+    </div>
 @endsection

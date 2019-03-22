@@ -26,7 +26,8 @@ Route::put('panier', 'BasketController@addPanier')
 
 
 //*********Customer Controller*****************************************************************************************
-//Route::get('/customer', 'CustomerController@index');
+//Route::get('/customer', 'CustomerController@index')
+//    ->name('customerList');
 //Route::get('/customer/create', 'CustomerController@create');
 //Route::post('/customer', 'CustomerController@store');
 //Route::get('/customer/{id}', 'CustomerController@show');
@@ -40,18 +41,10 @@ Route::put('panier', 'BasketController@addPanier')
 
 Route::get('admin/login', 'SuperadminController@index')
     ->name('admin');
+
+//*********Admin Order Controller********************************************************************************************
 Route::get('admin/orderList', 'OrderController@index')
     ->name('list');
-
-//Route::get('admin/productcreate', 'SuperadminController@create')
-//    ->name('create');
-//Route::post('admin/result', 'SuperadminController@store');
-//Route::get('admin/{id}/produpdate', 'SuperadminController@edit');
-//Route::post('admin/{id}/resultupdate', 'SuperadminController@update');
-//Route::get('admin/productdestroy', 'SuperadminController@destroy')
-//    ->name('destroy');
-//Route::post('admin/productdelete', 'SuperadminController@delete')
-//    ->name('delete');
 
 //*********Admin Product Controller************************************************************************************
 Route::get('/admin/catalog', 'AdminProductController@index')
@@ -68,3 +61,19 @@ Route::post('/admin/product/{id}/edited', 'AdminProductController@update')
     ->name('admin_productEdited');
 Route::get('/admin/product/{id}/delete', 'AdminProductController@destroy')
     ->name('admin_productDestroy');
+
+//*********Admin Customer Controller************************************************************************************
+Route::get('/admin/list', 'AdminCustomerController@index')
+    ->name('admin_customerList');
+//Route::get('/admin/customer/create', 'AdminCustomerController@index')
+//    ->name('admin_customerCreate');
+//Route::post('/admin/customer/created', 'AdminCustomerController@index')
+//    ->name('admin_customerCreated');
+//Route::get('/admin/customer/{id}', 'AdminCustomerController@index')
+//    ->name('admin_customerShow');
+//Route::get('/admin/customer/{id}/edit', 'AdminCustomerController@index')
+//    ->name('admin_customerEdit');
+//Route::post('/admin/customer/{id}/edited', 'AdminCustomerController@index')
+//    ->name('admin_customerEdited');
+//Route::get('/admin/customer/{id}/delete', 'AdminCustomerController@index')
+//    ->name('admin_customerDestroy');
