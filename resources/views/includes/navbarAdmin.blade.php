@@ -21,7 +21,7 @@
                 <a class="nav-link" href="{{ route('admin_customerList') }}">Liste Clients</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('list') }}">Liste Commandes</a>
+                <a class="nav-link" href="{{ route('admin_orderList') }}">Liste Commandes</a>
             </li>
         </ul>
     </div>

@@ -48,8 +48,8 @@ Route::get('admin/login', 'SuperadminController@index')
     ->name('admin');
 
 //*********Admin Order Controller**************************************************************************************
-Route::get('admin/orderList', 'OrderController@index')
-    ->name('list');
+Route::get('admin/order/list', 'AdminOrderController@index')
+    ->name('admin_orderList');
 
 //*********Admin Product Controller************************************************************************************
 Route::get('/admin/catalog', 'AdminProductController@index')
