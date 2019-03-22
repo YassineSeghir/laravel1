@@ -22,7 +22,6 @@
                 <tbody>
                 @foreach($customers as $customer)
                     <tr>
-                        {{--@dd($customer->address[0]->street)--}}
                         <td>{{ $customer->id }}</td>
                         <td>{{ $customer->last_name }}</td>
                         <td>{{ $customer->first_name }}</td>
@@ -33,9 +32,9 @@
                         <td>{{ $customer->address[0]->city }}</td>
                         <td>{{ $customer->address[0]->country }}</td>
                         <td>
-                            {{--<a href="{{ route('') }}">--}}
-                            {{--<i class="fas fa-trash"></i>--}}
-                            {{--</a>--}}
+                            <a href="{{ url('admin/customer/' . $customer->id) }}">
+                            <i class="fas fa-eye"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

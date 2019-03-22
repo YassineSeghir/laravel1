@@ -39,13 +39,15 @@ Route::post('panier', 'BasketController@destroyPanier')
 //Route::delete('/customer/{id}', 'CustomerController@destroy');
 
 
+
+
 //*********************************************************************************************************************
 //*********BACKOFFICE**************************************************************************************************
 
 Route::get('admin/login', 'SuperadminController@index')
     ->name('admin');
 
-//*********Admin Order Controller********************************************************************************************
+//*********Admin Order Controller**************************************************************************************
 Route::get('admin/orderList', 'OrderController@index')
     ->name('list');
 
@@ -65,18 +67,20 @@ Route::post('/admin/product/{id}/edited', 'AdminProductController@update')
 Route::get('/admin/product/{id}/delete', 'AdminProductController@destroy')
     ->name('admin_productDestroy');
 
-//*********Admin Customer Controller************************************************************************************
+//*********Admin Customer Controller***********************************************************************************
 Route::get('/admin/list', 'AdminCustomerController@index')
     ->name('admin_customerList');
-//Route::get('/admin/customer/create', 'AdminCustomerController@index')
+//Route::get('/admin/customer/create', 'AdminCustomerController@create')
 //    ->name('admin_customerCreate');
-//Route::post('/admin/customer/created', 'AdminCustomerController@index')
+//Route::post('/admin/customer/created', 'AdminCustomerController@store')
 //    ->name('admin_customerCreated');
-//Route::get('/admin/customer/{id}', 'AdminCustomerController@index')
-//    ->name('admin_customerShow');
-//Route::get('/admin/customer/{id}/edit', 'AdminCustomerController@index')
+Route::get('/admin/customer/{id}', 'AdminCustomerController@show')
+    ->name('admin_customerShow');
+//Route::get('/admin/customer/{id}/edit', 'AdminCustomerController@edit')
 //    ->name('admin_customerEdit');
-//Route::post('/admin/customer/{id}/edited', 'AdminCustomerController@index')
+//Route::post('/admin/customer/{id}/edited', 'AdminCustomerController@update')
 //    ->name('admin_customerEdited');
-//Route::get('/admin/customer/{id}/delete', 'AdminCustomerController@index')
+//Route::get('/admin/customer/{id}/delete', 'AdminCustomerController@destroy')
 //    ->name('admin_customerDestroy');
+
+//*********Admin Category Controller***********************************************************************************

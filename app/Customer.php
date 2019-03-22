@@ -13,4 +13,8 @@ class Customer extends Model
     {
         return $this->hasMany('App\Address', 'id_customer');
     }
+    public function order()
+    {
+        return $this->hasMany('App\Order', 'id_customer');
+    }
 }
