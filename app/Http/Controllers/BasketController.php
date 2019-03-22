@@ -11,16 +11,41 @@ class BasketController extends Controller
     public function showPanier(Request $request)
     {
         $data = $request->session()->get('key');
-        return view('panier', ['data' => $data]);
+
+        $total = 0;
+        return view('panier', ['data' => $data], ['total' => $total]);
     }
 
     public function addPanier(Request $request)
     {
         $product = Product::find($request['id']);
-//        dd($product);
         $request->session()->put('key.' . $product->id, $product);
         $data = $request->session()->get('key');
-        return view('panier', ['data' => $data]);
+
+        $total = 0;
+        foreach ($data as $product) {
+//
+            $total += ($product->price / 100);
+        }
+
+
+        return view('panier', ['data' => $data], ['total' => $total]);
+    }
+
+    public function emptyPanier(Request $request)
+    {
+
+        $request->session()->flush();
+
+        return redirect()->route('basketFree');
+    }
+
+
+    public function destroyPanier($id,Request $request)
+    {
+        $request->session()->forget($id);
+        
+        return redirect()->route('basketSupp');
     }
 }
 

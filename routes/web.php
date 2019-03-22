@@ -23,7 +23,10 @@ Route::get('panier', 'BasketController@showPanier')
     ->name('basket');
 Route::put('panier', 'BasketController@addPanier')
     ->name('basketAdd');
-
+Route::post('panier', 'BasketController@emptyPanier')
+    ->name('basketFree');
+Route::post('panier', 'BasketController@destroyPanier')
+    ->name('basketSupp');
 
 //*********Customer Controller*****************************************************************************************
 //Route::get('/customer', 'CustomerController@index')
