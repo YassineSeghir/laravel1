@@ -16,6 +16,6 @@ class Order extends Model
     }
     public function customer()
     {
-        return $this->belongsTo(App\Customer, 'id_customer');
+        return $this->belongsTo('App\Customer', 'id_customer');
     }
 }
