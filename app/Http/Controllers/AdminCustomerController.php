@@ -24,10 +24,10 @@ class AdminCustomerController extends Controller
     {
     }
 
-    public function show()
+    public function show($id)
     {
-//        $customer = app\Customer::findOrFail($id);
-//        return view('admin.customers.list', ['customer' => $customer]);
+        $customer = app\Customer::findOrFail($id);
+        return view('admin.customers.show', ['customer' => $customer]);
     }
 
     public function edit()
