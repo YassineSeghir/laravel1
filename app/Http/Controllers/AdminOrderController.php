@@ -47,7 +47,6 @@ class AdminOrderController extends Controller
 
     public function destroy($id)
     {
-
         $order = App\Order::findOrFail($id);
         $order->delete();
 
