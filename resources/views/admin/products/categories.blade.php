@@ -13,14 +13,19 @@
         <tbody>
         @foreach ($categories as $category)
             <tr>
-                <th scope="row">{{$category->name}} </th>
-                <td><a href="{{url ('admin/products/editCategories/' . $category->id)  }}"><i class="fas fa-edit"></i></a>
+                <th scope="row">{{ $category->name }} </th>
+                <td>
+                    <a href="{{ url('admin/products/editCategories/' . $category->id) }}">
+                        <i class="fas fa-edit"></i>
+                    </a>
                 </td>
                 <td>
-                    <form action = "{{url('admin/products/categories/' . $category->id) }}" method="post">
+                    <form action="{{ url('admin/products/categories/' . $category->id) }}" method="post">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-primary"><img src="../../images/delete.png" class="delete"></button></i>
+                        <button type="submit" class="btn btn-primary">
+                            <img src="../../images/delete.png" alt="delete" class="delete">
+                        </button>
                     </form>
                 </td>
             </tr>

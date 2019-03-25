@@ -23,17 +23,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="price">Prix</label>
-                                <input type="number" min="100" max="100000" class="form-control" name="price" placeholder="Prix"
+                                <input type="number" min="100" max="100000" class="form-control" name="price"
+                                       placeholder="Prix"
                                        value="{{ $product->price }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="weight">Poids</label>
-                                <input type="number" min="1" max="100" class="form-control" name="weight" placeholder="Poids"
+                                <input type="number" min="1" max="100" class="form-control" name="weight"
+                                       placeholder="Poids"
                                        value="{{ $product->weight }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="stock">Stock</label>
-                                <input type="number" min="100" max="100000" class="form-control" name="stock" placeholder="Stock"
+                                <input type="number" min="100" max="100000" class="form-control" name="stock"
+                                       placeholder="Stock"
                                        value="{{ $product->stock }}" required>
                             </div>
                             <div class="form-group">
@@ -43,7 +46,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="id_image">Image_id</label>
-                                <input type="number" min="1" max="100" class="form-control" name="id_image" placeholder="id_image"
+                                <input type="number" min="1" max="100" class="form-control" name="id_image"
+                                       placeholder="id_image"
                                        value="{{ $product->image_id }}" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>

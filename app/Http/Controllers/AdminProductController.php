@@ -13,8 +13,6 @@ class AdminProductController extends Controller
 {
     public function index()
     {
-        $products = Product::orderBy('name', 'asc')->get();
-
 //        $products = Product::join('categories', 'id_category', '=', 'categories.id')
 //            ->select('products.*')
 //            ->orderBy('categories.name', 'desc')
@@ -22,9 +20,8 @@ class AdminProductController extends Controller
 //            ->get();
       //  return view('admin/products', compact('products'));
 
+        $products = Product::orderBy('name', 'asc')->get();
         return view('admin.products.catalog', ['products' => $products]);
-
-
     }
 
 
@@ -45,8 +42,6 @@ class AdminProductController extends Controller
         $product->stock = $request->input('stock');
         $product->id_category = $request->input('cat');
         $product->id_image = $request->input('img');
-
-    //    dd($product);
 
         $product->save();
         return redirect()->route('admin_catalog');
