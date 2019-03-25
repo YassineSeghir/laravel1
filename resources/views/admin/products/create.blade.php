@@ -17,28 +17,41 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea name="description" class="form-control" id="description" rows="3">une briève description
+                        <textarea name="description" class="form-control" id="description" rows="3">une brève description de votre produit
                         </textarea>
                     </div>
                     <div class="form-group">
                         <label for="price">Prix</label>
-                        <input name="price" type="number" min="100" max="100000" class="form-control" id="price" placeholder="Prix" required>
+                        <input name="price" type="number" min="10" max="100000" class="form-control" id="price" placeholder="Prix" required>
                     </div>
                     <div class="form-group">
                         <label for="weight">Poids</label>
-                        <input name="weight" type="number" min="100" max="3000" class="form-control" id="weight" placeholder="Poids" required>
+                        <input name="weight" type="number" min="10" max="3000" class="form-control" id="weight" placeholder="Poids" required>
                     </div>
                     <div class="form-group">
                         <label for="stock">Stock</label>
                         <input name="stock" type="number" min="1" max="100000" class="form-control" id="stock" placeholder="Stock"required>
                     </div>
-                    <div class="form-group">
-                        <label for="cat">Catégorie</label>
-                        <input name="id_category" type="number" min="1" max="100" class="form-control" id="category" placeholder="Catégorie" required>
+
+                    <div class="form-group col-md-4">
+                        <label for="categories">Catégories</label>
+                        <select id="cat" class="form-control" name="cat">
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}" selected>
+                                    {{$category->name}}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label for="id_image">Catégorie</label>
-                        <input name="id_image" type="number" min="1" max="10" class="form-control" id="id_image" placeholder="Catégorie Image" required>
+                    <div class="form-group col-md-4">
+                        <label for="images">Images</label>
+                        <select id="img" class="form-control" name="img">
+                            @foreach ($images as $image)
+                                <option value="{{$image->id}}" selected>
+                                    {{ $image->imgURL }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

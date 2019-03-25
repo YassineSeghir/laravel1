@@ -15,7 +15,7 @@
                 <a class="nav-link" href="{{ route('admin_productCreate') }}">Ajouter un produit </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Catégories Produits</a>
+                <a class="nav-link" href="{{ route('categories') }}">Catégories Produits</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('admin_customerList') }}">Liste Clients</a>

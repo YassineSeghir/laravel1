@@ -121,10 +121,23 @@ h5 span {
     text-align: center;
 }
 
-.fa-eye {
+.fa-eye, .fa-edit, fa-trash-alt {
     color: #000
 }
+.btn-primary{
+    background-color:transparent;
+    border:none;
+    color:#000;
+}
+.btn-primary:hover{
+    background-color:#CCC;
+    border:none;
+}
 
+.delete {
+    width: 15%;
+    height: auto;
+}
 .center {
     text-align: center;
 }

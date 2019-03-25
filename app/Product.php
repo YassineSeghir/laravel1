@@ -19,6 +19,11 @@ class Product extends Model
         return $this->belongsToMany('App\Order', 'order_product', 'id_order', 'id_product')
             ->withPivot('qty');
     }
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'id_category');
+    }
+
 }
 
 

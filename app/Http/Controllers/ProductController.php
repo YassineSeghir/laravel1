@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
+Use Category;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -12,8 +13,7 @@ use PDO;
 class ProductController extends Controller
 {
     public function index()
-    {
-//        $products = DB::select('SELECT * FROM products');
+    {// $products = DB::select('SELECT * FROM products');
         $products = app\Product::orderBy('price', 'asc')->get();
         return view('products.catalog', ['products' => $products]);
     }

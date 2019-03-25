@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('admin.layoutAdmin')
 @section('title', 'Editer la catégorie')
 @section('titrePage', 'Editer la catégorie : ' )
 @section('content')
@@ -12,7 +12,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Mettre à jour</button>
     </form>
-
 @endsection
 
 

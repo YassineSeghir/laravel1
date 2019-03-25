@@ -12,6 +12,7 @@
                     <th scope="col">Description</th>
                     <th scope="col">Prix unitaire</th>
                     <th scope="col">Image</th>
+                    <th scope="col">Catégories</th>
                     <th scope="col">Voir</th>
                     <th scope="col">Editer</th>
                     <th scope="col">Supprimer</th>
@@ -24,7 +25,17 @@
                         <td>{{ $product->description }}</td>
                         <td>{{ number_format($product->price/100,2) }} €</td>
                         <td>
-                            <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}" height="33">
+                            @if($product->image == NULL)
+                                <img src="{{asset('images/no_image.png')}}" alt="" height="100">
+                            @else
+                                <img src="{{asset($product->image->imgURL) }}" alt="{{ $product->name }}" height="100">
+
+                            @endif
+                        </td>
+                        <td>
+                            @if (isset($product->category->name) )
+                           {{$product->category->name}}
+                           @endif
                         </td>
                         <td>
                             <a href="{{ url('admin/product/' . $product->id) }}">
