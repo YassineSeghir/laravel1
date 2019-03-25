@@ -18,25 +18,39 @@ class AdminOrderController extends Controller
 
     public function create()
     {
+
     }
 
     public function store()
     {
+
     }
 
     public function show()
     {
+
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $order = Order::findOrFail($id);
+        return view('admin.order.edit', ['order' => $order]);
     }
 
-    public function update()
+    public function update($id)
     {
+        $order = Order::findOrFail($id);
+
+        $order->save();
+        return view('admin.order.edited', ['order' => $order]);
     }
 
-    public function destroy()
+    public function destroy($id)
     {
+
+        $order = App\Order::findOrFail($id);
+        $order->delete();
+
+        return redirect()->route('admin_orderList');
     }
 }

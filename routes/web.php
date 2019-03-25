@@ -50,6 +50,12 @@ Route::get('admin/login', 'SuperadminController@index')
 //*********Admin Order Controller**************************************************************************************
 Route::get('admin/order/list', 'AdminOrderController@index')
     ->name('admin_orderList');
+Route::get('admin/order/edit', 'AdminOrderController@edit')
+    ->name('admin_orderEdit');
+Route::post('admin/order/edited', 'AdminOrderController@edit')
+    ->name('admin_orderEdited');
+Route::delete('/admin/order/{id}/delete', 'AdminOrderController@destroy')
+    ->name('admin_orderDestroy');
 
 //*********Admin Product Controller************************************************************************************
 Route::get('/admin/catalog', 'AdminProductController@index')

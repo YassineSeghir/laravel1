@@ -65,6 +65,7 @@
 
             <h1>Total = {{$total}} €</h1>
         @else
+
         @endif
     </div>
 
