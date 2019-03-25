@@ -36,6 +36,10 @@
                         <label for="cat">Catégorie</label>
                         <input name="id_category" type="number" min="1" max="100" class="form-control" id="category" placeholder="Catégorie" required>
                     </div>
+                    <div class="form-group">
+                        <label for="id_image">Catégorie</label>
+                        <input name="id_image" type="number" min="1" max="10" class="form-control" id="id_image" placeholder="Catégorie Image" required>
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
