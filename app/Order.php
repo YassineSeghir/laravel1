@@ -9,8 +9,8 @@ class Order extends Model
     Protected $table = 'orders';
     public $timestamps = false;
 
-//    public function
-//    {
-//        return $this->hasMany ('App)
-//    }
+    public function
+    {
+
+    }
 }

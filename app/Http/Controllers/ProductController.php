@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
+
 use App\Http\Controllers\Controller;
 use App\Product;
 
@@ -21,6 +23,9 @@ class ProductController extends Controller
         return view('product/create');
     }
 
+    public function store(Request $request,$id)
+    {
+        $products = $request->session()->put($id);
 
     public function store(Request $request)
     {

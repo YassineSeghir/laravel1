@@ -1,6 +1,7 @@
 @extends('layout')
 @section('title', 'Catalogue')
 @section('content')
+<<<<<<< HEAD:resources/views/product/catalog.blade.php
     <div class="jumbotron jumbotron-fluid btm">
         <div class="container">
             <h1 class="display-4">Notre catalogue</h1>
@@ -37,4 +38,31 @@
             </a>
         </div>
     </div>
+=======
+    <style>
+        img {
+            height: 110px;
+            min-width: 90px;
+            border-radius: 5px;
+            border: solid 1px #000;
+        }
+
+
+    </style>
+
+    <h1>Catalogue</h1>
+
+    @foreach ($products as $product)
+        {{$product->name}}<br>
+        <img src="{{asset($product->image->imgURL)}}"><br>
+        {{$product->description}}<br>
+        {{$product->price/100}} €<br>
+        <a class="btn btn-success btn-lg" href="{{url('product/'.$product->id)}}"role="button">Fiche produit</a><br>
+        <br>
+
+    @endforeach
+    {{--<a class="btn btn-success btn-lg" href="{{url('admin/productcreate')}}"role="button">Ajouter produit</a><br>--}}
+>>>>>>> 3cedb2bb1e6a07c66a2138e66c4a2cdc3be57b59:resources/views/catalog.blade.php
 @endsection
+
+

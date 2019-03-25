@@ -20,6 +20,6 @@ class Product extends Model
     }
     public function image()
     {
-        return $this->hasMany('App/Image');
+        return $this->belongsT('App/Image', 'id_image');
     }
 }
