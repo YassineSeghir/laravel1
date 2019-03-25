@@ -44,7 +44,8 @@ class BasketController extends Controller
     public function destroyPanier(Request $request)
     {
 
-        $request->session()->forget('key', $request->id);
+        $product = Product::find($request['id']);
+        $request->session()->forget('key.' . $product->id, $product);
 
         return redirect()->route('basketSupp' );
     }

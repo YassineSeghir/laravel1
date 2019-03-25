@@ -11,8 +11,20 @@
                     @foreach($order->product as $product)
                         <p>{{ $product->pivot->qty ." ". $product->name }}</p>
                     @endforeach
+                    <form action="{{route('admin_orderDestroy',['id'=>$order->id])}}" method="post">
+                        {{csrf_field()}}
+                        @method('DELETE')
+                        <a><input name="id" type="hidden" value="{{ $order->id }}"></a>
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
+                    <form action="{{route('admin_orderEdited')}}" method="post">
+                        {{csrf_field()}}
+                        <a><input name="id" type="hidden" value="{{ $order->id }}"></a>
+                        <button type="submit" class="btn btn-success btn-lg">Editer</button>
+                    </form>
                 @endforeach
             </div>
         </div>
     </div>
 @endsection
+

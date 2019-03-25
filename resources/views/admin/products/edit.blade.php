@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="id_image">Image_id</label>
-                                <input type="number" min="1" max="100" class="form-control" name="image_id" placeholder="id_image"
+                                <input type="number" min="1" max="100" class="form-control" name="id_image" placeholder="id_image"
                                        value="{{ $product->image_id }}" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
