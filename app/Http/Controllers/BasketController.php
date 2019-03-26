@@ -12,7 +12,13 @@ class BasketController extends Controller
     {
         $data = $request->session()->get('key');
         $total = 0;
+        if ($data)
+        foreach ($data as $product) {
+
+            $total += ($product->price / 100);
+        }
         return view('panier', ['data' => $data], ['total' => $total]);
+
     }
 
     public function addPanier(Request $request)
@@ -47,6 +53,7 @@ class BasketController extends Controller
 
        return redirect()->route('basket' );
     }
+
 }
 
 
