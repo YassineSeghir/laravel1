@@ -18,6 +18,7 @@
                     <form action="#" method="post" >
                         {{csrf_field()}}
                         <button type="submit" class=" btn btn-success btn-lg">Recalculer</button>
+
                     @foreach($data as $product)
                         <tr>
                             <td>{{ $product->name }}</td>

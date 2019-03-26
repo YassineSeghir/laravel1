@@ -13,12 +13,7 @@ class AdminProductController extends Controller
 {
     public function index()
     {
-//        $products = Product::join('categories', 'id_category', '=', 'categories.id')
-//            ->select('products.*')
-//            ->orderBy('categories.name', 'desc')
-//            ->orderBy('products.name', 'asc')
-//            ->get();
-      //  return view('admin/products', compact('products'));
+
 
         $products = Product::orderBy('name', 'asc')->get();
         return view('admin.products.catalog', ['products' => $products]);
