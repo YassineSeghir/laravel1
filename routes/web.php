@@ -19,14 +19,15 @@ Route::get('/product/{id}', 'ProductController@show')
 
 
 //*********Basket Controller*******************************************************************************************
+Route::get('delpanier/{id}', 'BasketController@destroyPanier')
+    ->name('basketSupp');
 Route::get('panier', 'BasketController@showPanier')
     ->name('basket');
 Route::put('panier', 'BasketController@addPanier')
     ->name('basketAdd');
 Route::post('panier', 'BasketController@emptyPanier')
     ->name('basketFree');
-Route::delete('panier', 'BasketController@destroyPanier')
-    ->name('basketSupp');
+
 
 
 //*********Customer Controller*****************************************************************************************
