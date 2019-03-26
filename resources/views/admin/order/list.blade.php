@@ -17,7 +17,6 @@
                         <a><input name="id" type="hidden" value="{{ $order->id }}"></a>
                         <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
-
                     <form action="{{ route('admin_orderEdit',['id'=>$order->id]) }}" method="post">
                         {{csrf_field()}}
                         <a><input name="id" type="hidden" value="{{ $order->id }}"></a>
