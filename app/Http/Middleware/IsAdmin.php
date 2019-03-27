@@ -19,7 +19,7 @@ class IsAdmin
     {
         $user = $request->user();
 
-        if ($user && $user->isAdmin === '1') {
+        if ($user && $user->isAdmin === 1) {
             return $next($request);
         }
 
