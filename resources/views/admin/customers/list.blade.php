@@ -8,6 +8,7 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">login</th>
                     <th scope="col">Nom de Famille</th>
                     <th scope="col">Prénom</th>
                     <th scope="col">email</th>
@@ -23,17 +24,18 @@
                 @foreach($customers as $customer)
                     <tr>
                         <td>{{ $customer->id }}</td>
+                        <td>{{ $customer->name }}</td>
                         <td>{{ $customer->last_name }}</td>
                         <td>{{ $customer->first_name }}</td>
                         <td>{{ $customer->email }}</td>
-                        <td>{{ $customer->address[0]->street }}</td>
-                        <td>{{ $customer->address[0]->street2 }}</td>
-                        <td>{{ $customer->address[0]->zipcode }}</td>
-                        <td>{{ $customer->address[0]->city }}</td>
-                        <td>{{ $customer->address[0]->country }}</td>
+                        <td>{{ isset($customer->address[0]->street) ? $customer->address[0]->street : ' '}}</td>
+                        <td>{{ isset($customer->address[0]->street2) ? $customer->address[0]->street2 : ' ' }}</td>
+                        <td>{{ isset($customer->address[0]->zipcode) ? $customer->address[0]->zipcode : ' ' }}</td>
+                        <td>{{ isset($customer->address[0]->city) ? $customer->address[0]->city : ' ' }}</td>
+                        <td>{{ isset($customer->address[0]->country) ? $customer->address[0]->country : ' ' }}</td>
                         <td>
                             <a href="{{ url('admin/customer/' . $customer->id) }}">
-                            <i class="fas fa-eye"></i>
+                                <i class="fas fa-eye"></i>
                             </a>
                         </td>
                     </tr>

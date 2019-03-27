@@ -1,8 +1,14 @@
 <?php
 
+Auth::routes();
+
+//*********Home Controller - Login*************************************************************************************
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 //*********Pages controller********************************************************************************************
 Route::get('/', 'PagesController@showHome')
-    ->name('home');
+    ->name('homepage');
 Route::get('/pages/cgv', 'PagesController@showCGV'
 )->name('cgv');
 Route::get('/pages/mentions', 'PagesController@showMentions')
@@ -29,7 +35,6 @@ Route::post('panier', 'BasketController@emptyPanier')
     ->name('basketFree');
 
 
-
 //*********Customer Controller*****************************************************************************************
 //Route::get('/customer', 'CustomerController@index')
 //    ->name('customerList');
@@ -39,10 +44,15 @@ Route::post('panier', 'BasketController@emptyPanier')
 //Route::get('/customer/{id}/edit', 'CustomerController@edit');
 //Route::put('/customer/{id}', 'CustomerController@update');
 //Route::delete('/customer/{id}', 'CustomerController@destroy');
+
+
 //*********************************************************************************************************************
 //*********BACKOFFICE**************************************************************************************************
+//*********************************************************************************************************************
+
 
 //Route::get('admin/login', 'SuperadminController@index')->name('admin');
+
 
 //*********Admin Order Controller**************************************************************************************
 Route::get('admin/order/list', 'AdminOrderController@index')
@@ -53,6 +63,7 @@ Route::post('admin/order/edited', 'AdminOrderController@edit')
     ->name('admin_orderEdited');
 Route::delete('/admin/order/{id}/delete', 'AdminOrderController@destroy')
     ->name('admin_orderDestroy');
+
 
 //*********Admin Product Controller************************************************************************************
 Route::get('/admin/catalog', 'AdminProductController@index')
@@ -71,7 +82,7 @@ Route::get('/admin/product/{id}/delete', 'AdminProductController@destroy')
     ->name('admin_productDestroy');
 
 
-//-------------------CATEGORIES-----------------------//
+//*********Admin Category Controller***********************************************************************************
 Route::get('/admin/products/categories', 'AdminCategoryController@index')->name('categories');
 
 Route::post('/admin/products/categories', 'AdminCategoryController@store');
@@ -84,7 +95,6 @@ Route::put('categories/{id}', 'AdminCategoryController@update')->name('update');
 
 Route::delete('/admin/products/categories/{id}', 'AdminCategoryController@destroy');
 
-/*-----------------------------------------------------------------------*/
 
 //*********Admin Customer Controller***********************************************************************************
 Route::get('/admin/list', 'AdminCustomerController@index')
@@ -102,7 +112,3 @@ Route::get('/admin/customer/{id}', 'AdminCustomerController@show')
 //Route::get('/admin/customer/{id}/delete', 'AdminCustomerController@destroy')
 //    ->name('admin_customerDestroy');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

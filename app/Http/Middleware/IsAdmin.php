@@ -16,11 +16,15 @@ class IsAdmin
      * @param  \Closure $next
      * @return mixed
      */
-//    public function handle($request, Closure $next)
-//    {
-//        if (Auth::id()) {
-//            return $next($request);
-//        }
-//        return view('homepage');
-//    }
+    public function handle($request, Closure $next)
+    {
+
+        $user = $request->user();
+
+        if ($user && $user->isAdmin === '1') {
+            return $next($request);
+        }
+
+        return redirect(route('home'));
+    }
 }
