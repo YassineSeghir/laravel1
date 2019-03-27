@@ -8,8 +8,13 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
+
 class AdminCategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(Request $request)
     {
         $categories = Category::all()->sortBy('name');
@@ -19,6 +24,9 @@ class AdminCategoryController extends Controller
     public function store(Request $request)
     {
         $category = new Category;
+        $validate = $request->validate([
+            'name' => 'required|unique:categories|max:20',
+        ]);
         $category->name = $request->name;
         $category->save();
 

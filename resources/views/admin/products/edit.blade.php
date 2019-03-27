@@ -36,10 +36,16 @@
                                 <input type="number" min="100" max="100000" class="form-control" name="stock" placeholder="Stock"
                                        value="{{ $product->stock }}" required>
                             </div>
-                            <div class="form-group">
-                                <label for="id_category">Categorie</label>
-                                <input type="text" class="form-control" name="id_category" placeholder="Categorie"
-                                       value="{{ $product->id_category }}" required>
+
+                            <div class="form-group col-md-4">
+                                <label for="categories">Catégories</label>
+                                <select id="cat" class="form-control" name="cat">
+                                    @foreach ($categories as $category)
+                                        <option value="{{$category->id}}" selected>
+                                            {{$category->name}}post
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="id_image">Image_id</label>

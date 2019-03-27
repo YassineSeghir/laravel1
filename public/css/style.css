@@ -10,7 +10,10 @@ body {
 
 }
 
-/*-------------------------------------*/
+/*---------------------------------*//
+.top-right a {
+    color:#000!important;
+}
 .fond {
     background: url("../images/fond.jpg");
     background-position: center;
@@ -177,7 +180,7 @@ h5 span {
 }
 
 a {
-    color: #FFF !important;
+    color: #000 !important;
 }
 
 nav {

@@ -11,20 +11,15 @@ use Illuminate\Support\Facades\DB;
 
 class AdminProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $products = Product::orderBy('name', 'asc')->get();
-
-//        $products = Product::join('categories', 'id_category', '=', 'categories.id')
-//            ->select('products.*')
-//            ->orderBy('categories.name', 'desc')
-//            ->orderBy('products.name', 'asc')
-//            ->get();
-      //  return view('admin/products', compact('products'));
-
         return view('admin.products.catalog', ['products' => $products]);
-
-
     }
 
 
@@ -38,6 +33,17 @@ class AdminProductController extends Controller
     public function store(Request $request)
     {
         $product = new Product;
+
+//        $validate = $request->validate([
+//            'name'          => 'required|:products|max:64',
+//            'description'   => 'required|:products|max:255',
+//            'price'         => 'required|:products',
+//            'weight'        => 'required|:products',
+//            'stock'         => 'required|:products',
+//            'id_category'   => 'required|:products',
+//            'id_image'      => 'required|:products',
+//        ]);
+
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
@@ -45,8 +51,6 @@ class AdminProductController extends Controller
         $product->stock = $request->input('stock');
         $product->id_category = $request->input('cat');
         $product->id_image = $request->input('img');
-
-    //    dd($product);
 
         $product->save();
         return redirect()->route('admin_catalog');
@@ -62,14 +66,18 @@ class AdminProductController extends Controller
 
     public function edit($id)
     {
+        $categories = Category::all();
         $product = Product::findOrFail($id);
-        return view('admin.products.edit', ['product' => $product]);
+        return view('admin.products.edit', ['product' => $product], ['categories' => $categories]);
     }
 
 
     public function update(Request $request, $id)
     {
+     //   $categories = Category::all();AB
+
         $product = Product::findOrFail($id);
+        $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->weight = $request->input('weight');
@@ -77,7 +85,7 @@ class AdminProductController extends Controller
         $product->id_category = $request->input('id_category');
         $product->id_image = $request->input('id_image');
         $product->save();
-        return view('admin.products.edited', ['product' => $product]);
+        return redirect()->route('admin_catalog');
     }
 
 

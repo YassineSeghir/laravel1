@@ -3,7 +3,6 @@
 @section('titrePage', 'Editer la catégorie : ' )
 @section('content')
     {{$category->name}}
-
     <form class="" action="{{ route('update', $category->id) }}" method="post">
         @method('PUT')
         {{ csrf_field() }}

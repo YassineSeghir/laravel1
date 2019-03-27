@@ -31,12 +31,18 @@
             <p>
                 Nous savions qu’il fallait quelque chose de plus à offrir à nos clients que de bonnes confitures :</p>
 
-            <p>de l’originalité, de la diversité, de l’authenticité et une présentation qui donne envie d’ acheter et
+            <p>de l’originalité, de la diversité, de l’authenticité et une présentation qui donne envie d’acheter et
                 d’ offrir. Ce sont 150 Recettes de produits différents disponibles
-                en 5 Grammages.80000 Pots et 240 Kg de Pâtes de Fruitsvendus en 2018.</p>
+                en 5 Grammages. 80000 Pots et 240 Kg de Pâtes de Fruitsvendus en 2018.</p>
             <p>Des recettes originales spécialement conçues pour vous messieurs.</p>
-                <p>Essayez dès à présent noter confiture de Gin, noter gelée de Cognac ou notre petite dernière la
+                <p>Essayez dès à présent notre confiture de Gin, notre gelée de Cognac ou notre petite dernière la
                 confiture Matignon.</p>
+        </div>
+    </div>
+
+    <div class="bande">
+        <div class="container home">
+          
         </div>
     </div>
 @endsection

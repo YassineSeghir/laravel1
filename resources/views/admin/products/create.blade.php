@@ -6,6 +6,16 @@
             <h4 class="display-4">Insérer un article</h4>
         </div>
     </div>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -38,7 +48,7 @@
                         <select id="cat" class="form-control" name="cat">
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}" selected>
-                                    {{$category->name}}
+                                    {{$category->name}}post
                                 </option>
                             @endforeach
                         </select>

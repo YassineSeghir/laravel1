@@ -5,7 +5,21 @@
         <div class="container">
             <div class="container btm">
                 <h1>Catalogue</h1>
-                @foreach ($products as $product)
+
+                <h2>TRIER :</h2>
+
+                <form class="input-group mb-3" id="frm" onchange="document.getElementById('frm').submit();">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Trier </label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="sort">
+                        <option selected>Choisir </option>
+                        <option>Nom</option>
+                        <option>Prix</option>
+                        <option >Catégories</option>
+                    </select>
+                </form>
+        @foreach ($products as $product)
                     <h3>{{ $product->name }}</h3>
                     <h3>{{number_format($product->price/100,2)}} €</h3>
                     @if($product->image == NULL)
