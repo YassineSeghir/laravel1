@@ -18,6 +18,9 @@ Route::get('/pages/contact', 'PagesController@showContact')
 
 
 //*********Product Controller******************************************************************************************
+Route::get('/', 'ProductController@home')
+    ->name('homepage');
+
 Route::get('/catalog', 'ProductController@index')
     ->name('catalog');
 Route::get('/product/{id}', 'ProductController@show')
