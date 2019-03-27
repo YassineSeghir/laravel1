@@ -12,7 +12,7 @@ class AdminCustomerController extends Controller
 {
     public function index()
     {
-        $customers = app\Customer::orderby('last_name', 'asc')->get();
+        $customers = app\User::orderby('last_name', 'asc')->get();
         return view('admin.customers.list', ['customers' => $customers]);
     }
 
@@ -26,7 +26,7 @@ class AdminCustomerController extends Controller
 
     public function show($id)
     {
-        $customer = app\Customer::findOrFail($id);
+        $customer = app\User::findOrFail($id);
         return view('admin.customers.show', ['customer' => $customer]);
     }
 

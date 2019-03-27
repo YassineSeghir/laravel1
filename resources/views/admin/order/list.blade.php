@@ -6,8 +6,8 @@
             <div class="container btm">
                 @foreach ($orders as $order)
                     <h2>{{ 'Commande: ' . $order->id }}</h2>
-                    <h4>{{ 'passée le ' . $order->date . ', par: Client n°' . $order->id_customer . ': ' .
-                            $order->customer->first_name . " " . $order->customer-> last_name }}</h4>
+                    <h4>{{ 'passée le ' . $order->date . ', par: Client n°' . $order->id_user . ': ' .
+                            $order->user->first_name . " " . $order->user-> last_name }}</h4>
                     @foreach($order->product as $product)
                         <p>{{ $product->pivot->qty ." ". $product->name }}</p>
                     @endforeach

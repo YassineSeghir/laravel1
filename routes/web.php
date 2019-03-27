@@ -102,3 +102,8 @@ Route::get('/admin/customer/{id}', 'AdminCustomerController@show')
 //    ->name('admin_customerEdited');
 //Route::get('/admin/customer/{id}/delete', 'AdminCustomerController@destroy')
 //    ->name('admin_customerDestroy');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

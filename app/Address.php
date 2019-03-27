@@ -9,8 +9,8 @@ class Address extends Model
     protected $table = 'address';
     public $timestamps = false;
 
-    public function customer()
+    public function user()
     {
-        return $this->belongsTo('App\Customer', 'id_customer');
+        return $this->belongsTo('App\User', 'id_user');
     }
 }
