@@ -2,7 +2,7 @@
 
 //*********Pages controller********************************************************************************************
 Route::get('/', 'PagesController@showHome')
-    ->name('home');
+    ->name('homepage');
 Route::get('/pages/cgv', 'PagesController@showCGV'
 )->name('cgv');
 Route::get('/pages/mentions', 'PagesController@showMentions')
@@ -12,6 +12,9 @@ Route::get('/pages/contact', 'PagesController@showContact')
 
 
 //*********Product Controller******************************************************************************************
+Route::get('/', 'ProductController@home')
+    ->name('homepage');
+
 Route::get('/catalog', 'ProductController@index')
     ->name('catalog');
 Route::get('/product/{id}', 'ProductController@show')

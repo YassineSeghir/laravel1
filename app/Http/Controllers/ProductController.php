@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
-Use Category;
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -13,10 +13,10 @@ use PDO;
 class ProductController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     /*  public function index()
      {
@@ -26,7 +26,7 @@ class ProductController extends Controller
 
     public function home()
     {
-        $products = app\Product::orderBy('name', 'asc')->take(4)->get();
+        $products = app\Product::inRandomOrder()->limit(4)->get();
         return view('homepage', ['products' => $products]);
     }
 
@@ -34,8 +34,6 @@ class ProductController extends Controller
     {
         $data = $request->input('sort');
         $products = app\Product::orderBy('name', 'asc')->get();
-
-
         if ($data == 'Nom') {
             $sorted = $products->sortBy('name');
             $sorted->values()->all();
@@ -64,8 +62,9 @@ class ProductController extends Controller
 
     public function show($id)
     {
+        $categories = Category::all();
         $product = app\Product::find($id);
-        return view('products.product', ['product' => $product]);
+        return view('products.product', ['product' => $product], ['category' => $categories]);
     }
 
 
