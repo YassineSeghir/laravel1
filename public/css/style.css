@@ -253,4 +253,8 @@ slideLeft
         transform: translateX(0%);
     }
 }
- 
+
+
+.noire {
+    color:black;
+}

@@ -8,6 +8,7 @@ use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use App\Http\Middleware\IsAdmin;
 
 class AdminProductController extends Controller
 {
@@ -15,6 +16,12 @@ class AdminProductController extends Controller
     {
         $this->middleware('auth');
     }
+
+//    public function __construct()
+//    {
+//        $this->middleware('IsAdmin');
+//    }
+
 
     public function index()
     {

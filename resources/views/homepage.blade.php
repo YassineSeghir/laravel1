@@ -42,7 +42,7 @@
 
     <div class="bande">
         <div class="container home">
-          
+
         </div>
     </div>
 @endsection
