@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class IsAdmin
 {
-
     /**
      * Handle an incoming request.
      *
@@ -18,7 +17,6 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-
         $user = $request->user();
 
         if ($user && $user->isAdmin === '1') {
