@@ -18,6 +18,7 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="../panier">Panier <span class="sr-only">(current)</span></a>
+                {{--<span class="badge" >{{Session::has ('key') ? Session::get('key')->totalQty : ''}}</span>--}}
             </li>
         </ul>
     </div>

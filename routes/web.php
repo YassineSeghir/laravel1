@@ -19,14 +19,15 @@ Route::get('/product/{id}', 'ProductController@show')
 
 
 //*********Basket Controller*******************************************************************************************
+Route::get('delpanier/{id}', 'BasketController@destroyPanier')
+    ->name('basketSupp');
 Route::get('panier', 'BasketController@showPanier')
     ->name('basket');
 Route::put('panier', 'BasketController@addPanier')
     ->name('basketAdd');
 Route::post('panier', 'BasketController@emptyPanier')
     ->name('basketFree');
-Route::delete('panier', 'BasketController@destroyPanier')
-    ->name('basketSupp');
+
 
 
 //*********Customer Controller*****************************************************************************************
@@ -50,9 +51,9 @@ Route::delete('panier', 'BasketController@destroyPanier')
 //*********Admin Order Controller**************************************************************************************
 Route::get('admin/order/list', 'AdminOrderController@index')
     ->name('admin_orderList');
-Route::get('admin/order/edit', 'AdminOrderController@edit')
+Route::post('admin/order/{id}/edit', 'AdminOrderController@edit')
     ->name('admin_orderEdit');
-Route::post('admin/order/edited', 'AdminOrderController@edit')
+Route::put('admin/order/{id}/edited', 'AdminOrderController@update')
     ->name('admin_orderEdited');
 Route::delete('/admin/order/{id}/delete', 'AdminOrderController@destroy')
     ->name('admin_orderDestroy');
