@@ -12,10 +12,10 @@ use App\Http\Middleware\IsAdmin;
 
 class AdminProductController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
 //    public function __construct()
 //    {
@@ -40,17 +40,6 @@ class AdminProductController extends Controller
     public function store(Request $request)
     {
         $product = new Product;
-
-//        $validate = $request->validate([
-//            'name'          => 'required|:products|max:64',
-//            'description'   => 'required|:products|max:255',
-//            'price'         => 'required|:products',
-//            'weight'        => 'required|:products',
-//            'stock'         => 'required|:products',
-//            'id_category'   => 'required|:products',
-//            'id_image'      => 'required|:products',
-//        ]);
-
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');

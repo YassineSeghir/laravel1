@@ -13,16 +13,6 @@ use PDO;
 class ProductController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /*  public function index()
-     {
-            $products = app\Product::orderBy('name', 'asc')->get();
-            return view('products.catalog', ['products' => $products]);
-     }*/
 
     public function home()
     {
