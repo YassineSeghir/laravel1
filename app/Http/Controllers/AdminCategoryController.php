@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\DB;
 
 class AdminCategoryController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+    {
+        $this->middleware('IsAdmin');
+    }
     public function index(Request $request)
     {
         $categories = Category::all()->sortBy('name');

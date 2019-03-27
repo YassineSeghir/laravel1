@@ -6,13 +6,14 @@
             <h1 class="slideLeft">
                 Les confitures<br> <span>Bon Papa</span>
             </h1>
-            <a href="#" class="center" title="Voir le catalogue"><i class="far fa-arrow-alt-circle-down"></i></a>
         </div>
     </div>
     <div class="bande">
         <div class="container home">
           <h2>Bienvenue</h2>
-          <h3>Les confitures bon papa ....</h3>
+          <h3>Les confitures bon papa ....<br>
+              <span>De la gnôle, du sucre, du bonheur !</span>
+          </h3>
         </div>
     </div>
         <div class="bande">
@@ -38,11 +39,22 @@
                 <p>Essayez dès à présent notre confiture de Gin, notre gelée de Cognac ou notre petite dernière la
                 confiture Matignon.</p>
         </div>
-    </div>
-
-    <div class="bande">
-        <div class="container home">
-
         </div>
+
+    <div class="container">
+        <div class="row">
+            @foreach ($products as $product)
+                <div class="col">
+                    <h4>{{ $product->name }}</h4>
+                    <a href="{{ url('product/'.$product->id) }}">
+                    @if($product->image == NULL)
+                        <img src="{{ asset('images/no_image.png') }}" alt="" height="100">
+                    @else
+                        <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}" height="100">
+                     @endif
+                     </a>
+                </div>
+        @endforeach
+    </div>
     </div>
 @endsection

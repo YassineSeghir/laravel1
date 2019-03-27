@@ -5,7 +5,12 @@
         <div class="container btm">
             <div class="row">
                 <div class="col-8">
-                    <h3>{{ $product->name }}</h3>
+                    <h3>{{ $product->name }} -
+
+                        @if (isset($product->category->name))
+                            {{ $product->category->name }}
+                        @endif
+                    </h3>
                     <h3>{{ number_format($product->price/100,2) }} €</h3>
                     <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}">
                 </div>

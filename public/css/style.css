@@ -17,19 +17,18 @@ body {
 .fond {
     background: url("../images/fond.jpg");
     background-position: center;
-    background-color: #FF530D;
     min-height: 65vh;
     padding-top: 150px;
     margin-bottom: 50px;
+
 }
 .home {
     font-size:1.4em;
 }
-h1, h2, h3, h4, h5 {
-    font-family: 'Pacifico', cursive;
-}
+
 
 h1 {
+    font-family: 'Pacifico', cursive;
     text-align: center;
     color: #000;
 }
@@ -74,14 +73,13 @@ h2 span {
 }
 
 h3 {
+    font-family: 'Pacifico', cursive
     font-size: 1.6em;
     font-weight: normal;
 }
 
 h3 span {
-    font-size: 0.5em;
-    color: #00ffff;
-    background: #FF3300;
+    font-size: 0.5em!important;
 }
 
 h4 {
