@@ -26,7 +26,9 @@
                             <td>{{ number_format($product->price/100,2) }} €</td>
                             <td>{{ number_format($product->price/100,2) }}€</td>
                             <td><input type="number" min="1" max="{{ $product->stock }}" value="1" name="qty"></td>
+
                             <td><a class="btn btn-danger" href="{{ route('basketSupp',['id'=>$product->id]) }}">Supprimer</a></td>
+
                             <input name="id" type="hidden" value="{{ $product->id }}">
                         </tr>
                     @endforeach

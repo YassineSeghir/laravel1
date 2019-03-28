@@ -6,7 +6,6 @@
             <div class="row">
                 <div class="col-8">
                     <h3>{{ $product->name }} -
-
                         @if (isset($product->category->name))
                             {{ $product->category->name }}
                         @endif
@@ -16,12 +15,14 @@
                 </div>
                 <div class="col-4">
                     <p>{{ $product->description }}</p>
-                    <form action="{{ route('basket') }}" method="post">
-                        @method ('PUT')
-                        @csrf
-                        <input name="id" type="hidden" value="{{ $product->id }}">
-                        <button type="submit" class="btn btn-success btn-lg">Ajouter au panier</button>
-                    </form>
+                    @if(Auth::id())
+                        <form action="{{ route('basket') }}" method="post">
+                            @method ('PUT')
+                            @csrf
+                            <input name="id" type="hidden" value="{{ $product->id }}">
+                            <button type="submit" class="btn btn-success btn-lg">Ajouter au panier</button>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>
