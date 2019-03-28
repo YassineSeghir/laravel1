@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use Illuminate\Database\Eloquent\Model
 
 class CartController extends Controller
 {
@@ -11,9 +13,17 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $totalPrice = 0;
+        $products = $request->session()->get('key');
+        if ($request->session()->has('key')) {
+            foreach ($request->session()->get('key') as $product) {
+                $totalPrice += ($product->price);
+            }
+        }
+
+        return view('basket.panier', ['products' => $products], ['totalPrice' => $totalPrice]);
     }
 
     /**

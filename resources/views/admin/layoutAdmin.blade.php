@@ -33,17 +33,22 @@
         </div>
     @endif
 </div>
+
 <nav>
     @include('includes.navbarAdmin')
 </nav>
+
 <div>
     @yield('content')
 </div>
-<hr>
+
 <div class="container">
-    <div class="row"><h2> @yield('soustitre')</h2>
+    <div class="row">
+        <h2> @yield('soustitre')
+        </h2>
     </div>
 </div>
+
 <div class="container">
     <div class="row">
         @yield('form')
@@ -51,9 +56,12 @@
 </div>
 
 <div class="container">
-    <div class="row"><h2> @yield('soustitre2')</h2>
+    <div class="row">
+        <h2> @yield('soustitre2')
+        </h2>
     </div>
 </div>
+
 <div class="container">
     <div class="row"><h2> @yield('content2')</h2>
     </div>
@@ -63,6 +71,7 @@
 <footer>
     @include('includes.footer')
 </footer>
+
 </body>
 
 </html>

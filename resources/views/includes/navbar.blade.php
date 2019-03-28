@@ -10,21 +10,22 @@
 
         <ul class="nav justify-content-end">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('homepage') }}">Accueil<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../catalog">Catalogue <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('catalog') }}">Catalogue<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/pages/contact">Contact <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('contact') }}">Contact<span class="sr-only">(current)</span></a>
             </li>
             @if(Auth::id())
                 <li class="nav-item active">
-                    <a class="nav-link" href="../panier">Mon Panier <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('basket') }}">Mon Panier<span
+                                class="sr-only">(current)</span></a>
                     {{--<span class="badge" >{{Session::has ('key') ? Session::get('key')->totalQty : ''}}</span>--}}
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="../order">Liste de mes commandes <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('order') }}">Liste de mes commandes<span class="sr-only">(current)</span></a>
                     {{--<span class="badge" >{{Session::has ('key') ? Session::get('key')->totalQty : ''}}</span>--}}
                 </li>
             @endif
@@ -48,14 +49,11 @@
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
-
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                               style="display: none;">
                             @csrf

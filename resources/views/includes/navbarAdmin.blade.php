@@ -13,7 +13,7 @@
                         <a class="nav-link" href="{{ route('admin_catalog') }}">Liste Produits</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('admin_productCreate') }}">Ajouter un produit </a>
+                        <a class="nav-link" href="{{ route('admin_productCreate') }}">Ajouter un produit</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('categories') }}">Catégories Produits</a>
@@ -25,9 +25,6 @@
                         <a class="nav-link" href="{{ route('admin_orderList') }}">Liste Commandes</a>
                     </li>
                     <li><a class="nav-link" href="{{ route('homepage') }}">Voir le site</a></li>
-                </ul>
-                <ul class="navbar-nav mr-auto">
-
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -48,7 +45,6 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
-
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -67,5 +63,4 @@
             </div>
         </div>
     </nav>
-
 </div>

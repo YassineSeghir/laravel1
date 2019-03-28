@@ -6,7 +6,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//*********Commandes controller****************************************************************************************
+//*********Order controller****************************************************************************************
 Route::get('/order', 'OrderController@show')
     ->name('order');
 
@@ -24,7 +24,6 @@ Route::get('/pages/contact', 'PagesController@showContact')
 //*********Product Controller******************************************************************************************
 Route::get('/', 'ProductController@home')
     ->name('homepage');
-
 Route::get('/catalog', 'ProductController@index')
     ->name('catalog');
 Route::get('/product/{id}', 'ProductController@show')
@@ -32,12 +31,12 @@ Route::get('/product/{id}', 'ProductController@show')
 
 
 //*********Basket Controller*******************************************************************************************
-Route::get('delpanier/{id}', 'BasketController@destroyPanier')
-    ->name('basketSupp');
 Route::get('panier', 'BasketController@showPanier')
     ->name('basket');
 Route::put('panier', 'BasketController@addPanier')
     ->name('basketAdd');
+Route::get('delpanier/{id}', 'BasketController@destroyPanier')
+    ->name('basketSupp');
 Route::post('panier', 'BasketController@emptyPanier')
     ->name('basketFree');
 
@@ -90,15 +89,16 @@ Route::get('/admin/product/{id}/delete', 'AdminProductController@destroy')
 
 
 //*********Admin Category Controller***********************************************************************************
-Route::get('/admin/products/categories', 'AdminCategoryController@index')->name('categories');
+Route::get('/admin/products/categories', 'AdminCategoryController@index')
+    ->name('categories');
 
 Route::post('/admin/products/categories', 'AdminCategoryController@store');
 
-Route::get('/admin/products/categories/{id}', 'AdminCategoryController@edit');
+Route::get('/admin/products/editCategories/{id}', 'AdminCategoryController@edit')
+    ->name('edit');
 
-Route::get('/admin/products/editCategories/{id}', 'AdminCategoryController@edit')->name('edit');
-
-Route::put('categories/{id}', 'AdminCategoryController@update')->name('update');
+Route::put('categories/{id}', 'AdminCategoryController@update')
+    ->name('update');
 
 Route::delete('/admin/products/categories/{id}', 'AdminCategoryController@destroy');
 
