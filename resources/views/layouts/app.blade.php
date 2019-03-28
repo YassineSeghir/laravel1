@@ -31,23 +31,23 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav justify-content-end">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('admin_catalog') }}">Liste Produits</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('admin_productCreate') }}">Ajouter un produit </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('categories') }}">Catégories Produits</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('admin_customerList') }}">Liste Clients</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('admin_orderList') }}">Liste Commandes</a>
-                    </li>
-                </ul>
+                {{--<ul class="nav justify-content-end">--}}
+                    {{--<li class="nav-item active">--}}
+                        {{--<a class="nav-link" href="{{ route('admin_catalog') }}">Liste Produits</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item active">--}}
+                        {{--<a class="nav-link" href="{{ route('admin_productCreate') }}">Ajouter un produit </a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item active">--}}
+                        {{--<a class="nav-link" href="{{ route('categories') }}">Catégories Produits</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item active">--}}
+                        {{--<a class="nav-link" href="{{ route('admin_customerList') }}">Liste Clients</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item active">--}}
+                        {{--<a class="nav-link" href="{{ route('admin_orderList') }}">Liste Commandes</a>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
                 <ul class="navbar-nav mr-auto">
                 </ul>
 

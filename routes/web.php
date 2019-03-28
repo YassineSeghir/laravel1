@@ -6,6 +6,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+//*********Commandes controller****************************************************************************************
+Route::get('/order', 'OrderController@show')
+    ->name('order');
+
 //*********Pages controller********************************************************************************************
 Route::get('/', 'PagesController@showHome')
     ->name('homepage');
