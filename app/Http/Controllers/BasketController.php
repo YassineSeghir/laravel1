@@ -25,8 +25,10 @@ class BasketController extends Controller
     {
 
         $product = Product::find($request['id']);
-        $request->session()->put('key.' . $product->id, $product);
-        $data = $request->session()->get('key');
+        $request->session()->put('basket.' . $product->id, $product);
+        // ~= $session['basket'][$product->id] = $product
+
+        $data = $request->session()->get('basket');
 
         $total = 0;
         foreach ($data as $product) {

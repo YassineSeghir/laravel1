@@ -39,7 +39,7 @@
                                 <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}" height="100">
                             @endif
                         </td>
-                        <td>{{$product->description}}<br>
+                        <td>{{$product->description}}<br><br>
                             {{number_format($product->price/100,2)}}
                             €
                             <br><a class=" btn btn-success btn-lg" href="{{ url('product/'.$product->id) }}"

@@ -109,3 +109,8 @@ Route::get('/admin/customer/{id}', 'AdminCustomerController@show')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+/*-------------**/
+

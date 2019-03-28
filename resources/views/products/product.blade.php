@@ -6,7 +6,6 @@
             <div class="row">
                 <div class="col-8">
                     <h3>{{ $product->name }} -
-
                         @if (isset($product->category->name))
                             {{ $product->category->name }}
                         @endif
