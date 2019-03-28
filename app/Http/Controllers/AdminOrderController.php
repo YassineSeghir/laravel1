@@ -12,8 +12,9 @@ class AdminOrderController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['IsAdmin']);
     }
+
     public function index()
     {
         $orders = app\Order::orderBy('id', 'asc')->get();
@@ -42,7 +43,7 @@ class AdminOrderController extends Controller
         return view('admin.order.editOrder', ['order' => $order]);
     }
 
-    public function update($id,Request $request)
+    public function update($id, Request $request)
     {
         $order = App\Order::findOrFail($id);
         $order->status = $request->input('status');

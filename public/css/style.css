@@ -118,6 +118,13 @@ h5 span {
     color: #0082FF;
 }
 
+#navbarSupportedContent {
+    background-color:#000;
+}
+. dropdown-menu dropdown-menu-right show a{
+
+    color:#000!important;
+}
 .icon {
     text-align: center;
 }
@@ -178,7 +185,7 @@ h5 span {
 }
 
 a {
-    color: #000 !important;
+    color: #fff !important;
 }
 
 nav {
