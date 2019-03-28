@@ -41,7 +41,7 @@ class BasketController extends Controller
     public function emptyPanier(Request $request)
     {
 
-        $request->session()->flush();
+        $request->session()->forget('key');
 
         return redirect()->route('basketFree');
     }
