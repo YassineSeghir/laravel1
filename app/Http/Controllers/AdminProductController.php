@@ -95,11 +95,12 @@ class AdminProductController extends Controller
         return redirect()->route('admin_catalog');
     }
 
-
+    // products are not deleted from DB, isInCatalog flag is set to 0 and they are not displayed
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
-        $product->delete();
+        $product->isInCatalog = 0;
+        $product->save();
         return redirect()->route('admin_catalog');
     }
 }

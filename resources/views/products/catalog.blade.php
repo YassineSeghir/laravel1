@@ -25,28 +25,34 @@
             <table class="table">
                 <tbody>
                 @foreach ($products as $product)
-                    <tr>
-                        <td>
-                            {{ $product->name }}
-                        </td>
-                        <td>@if (isset($product->category->name))
-                                {{ $product->category->name }}
-                            @endif</td>
-                        <td>
-                            @if($product->image == NULL)
-                                <img src="{{ asset('images/no_image.png') }}" alt="" height="100">
-                            @else
-                                <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}" height="100">
-                            @endif
-                        </td>
-                        <td>{{$product->description}}<br><br>
-                            {{number_format($product->price/100,2)}}
-                            €
-                            <br><a class=" btn btn-success btn-lg" href="{{ url('product/'.$product->id) }}"
-                                   role="button">
-                                Fiche produit
-                        </td>
-                    </tr>
+                    @if ($product->isInCatalog === 1)
+                        <tr>
+                            <td>
+                                {{ $product->name }}
+                            </td>
+                            <td>
+                                @if (isset($product->category->name))
+                                    {{ $product->category->name }}
+                                @endif
+                            </td>
+                            <td>
+                                @if($product->image == NULL)
+                                    <img src="{{ asset('images/no_image.png') }}" alt="" height="100">
+                                @else
+                                    <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}"
+                                         height="100">
+                                @endif
+                            </td>
+                            <td>{{ $product->description }}<br><br>
+                                {{ number_format($product->price/100,2) }}
+                                €
+                                <br><a class=" btn btn-success btn-lg" href="{{ url('product/'.$product->id) }}"
+                                       role="button">
+                                    Fiche produit
+                                </a>
+                            </td>
+                        </tr>
+                    @endif
                 @endforeach
                 </tbody>
             </table>

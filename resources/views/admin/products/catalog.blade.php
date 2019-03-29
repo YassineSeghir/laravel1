@@ -12,6 +12,7 @@
                     <th scope="col">Description</th>
                     <th scope="col">Prix unitaire</th>
                     <th scope="col">Image</th>
+                    <th scope="col">Actif</th>
                     <th scope="col">Catégories</th>
                     <th scope="col">Voir</th>
                     <th scope="col">Editer</th>
@@ -30,6 +31,9 @@
                             @else
                                 <img src="{{ asset($product->image->imgURL) }}" alt="{{ $product->name }}" height="100">
                             @endif
+                        </td>
+                        <td>
+                            {{ $product->isInCatalog }}
                         </td>
                         <td>
                             @if (isset($product->category->name))
