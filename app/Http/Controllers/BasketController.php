@@ -10,7 +10,7 @@ class BasketController extends Controller
 {
     public function showPanier(Request $request)
     {
-        $data = $request->session()->get('key');
+        $data = $request->session()->get('basket');
         $total = 0;
         if ($data) {
             foreach ($data as $product) {
@@ -38,7 +38,7 @@ class BasketController extends Controller
 
     public function emptyPanier(Request $request)
     {
-        $request->session()->forget('key');
+        $request->session()->forget('basket');
 
         return redirect()->route('basketFree');
     }
@@ -46,7 +46,7 @@ class BasketController extends Controller
 
     public function destroyPanier(Request $request, $id)
     {
-        $request->session()->forget('key.' . $id);
+        $request->session()->forget('basket.' . $id);
 
         return redirect()->route('basket');
     }
