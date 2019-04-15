@@ -10,13 +10,14 @@
 
         <ul class="nav justify-content-end">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('homepage') }}">Accueil<span class="sr-only">(current)</span></a>
+                <a class="nav-link " href="{{ route('homepage') }}">Accueil<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('catalog') }}">Catalogue<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('contact') }}">Contact<span class="sr-only">(current)</span></a>
+                <a class="nav-link " href="{{ route('contact') }}">Contact<span class="sr-only">(current)</span></a>
+            </li>
             </li>
             @if(Auth::id())
                 <li class="nav-item active">
